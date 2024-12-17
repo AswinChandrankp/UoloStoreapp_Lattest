@@ -875,20 +875,46 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> with WidgetsBin
 
                     if(controllerOrderModel.orderStatus == 'pending' && (controllerOrderModel.orderType == 'take_away'
                         || restConfModel || selfDelivery))  {
-                      Get.dialog(ConfirmationDialogWidget(
-                        icon: Images.warning, title: 'are_you_sure_to_confirm'.tr, description: 'you_want_to_confirm_this_order'.tr,
-                        onYesPressed: () {
-                          orderController.updateOrderStatus(widget.orderId, AppConstants.confirmed, back: true);
-                        },
-                        onNoPressed: () {
-                          if(cancelPermission!) {
-                            orderController.updateOrderStatus(widget.orderId, AppConstants.canceled, back: true);
-                          }else {
+                      // Get.dialog(ConfirmationDialogWidget(
+                      //   icon: Images.warning, title: 'are_you_sure_to_confirm'.tr, description: 'you_want_to_confirm_this_order'.tr,
+                      //   onYesPressed: () {
+                      //     // orderController.updateOrderStatus(widget.orderId, AppConstants.confirmed, back: true);
+                      //     orderController.Updateorderstatusinsingleclick(widget.orderId,  AppConstants.confirmed);
+                      //          Get.back();
+                      //   },
+                      //   onNoPressed: () {
+                      //     if(cancelPermission!) {
+                      //       orderController.updateOrderStatus(widget.orderId, AppConstants.canceled, back: true);
+                      //     }else {
+                      //       Get.back();
+                      //     }
+                      //   },
+                      // ),
+                      
+                      //  barrierDismissible: false);
+
+                        Get.dialog(InputDialogWidget(
+                          icon: Images.warning,
+                          title: 'are_you_sure_to_confirm'.tr,
+                          description: 'enter_processing_time_in_minutes'.tr, onPressed: (String? time){
+                          Get.find<OrderController>().updateOrderStatusInSingleClick(widget.orderId,  AppConstants.confirmed, processingTime: time).then((success) {
                             Get.back();
-                          }
+                           
+                            if(success) {
+                               Get.back();
+                              Get.find<ProfileController>().getProfile();
+                              Get.find<OrderController>().getCurrentOrders();
+
+                            }
+                          });
                         },
-                      ), barrierDismissible: false);
+                        ));
                     }
+
+                     else if (controllerOrderModel.orderStatus == AppConstants.confirmed) {
+                      Get.back();
+                       
+                     }
 
                     else if(controllerOrderModel.orderStatus == 'processing') {
                       Get.find<OrderController>().updateOrderStatus(widget.orderId, AppConstants.handover);
@@ -903,8 +929,11 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> with WidgetsBin
                           icon: Images.warning,
                           title: 'are_you_sure_to_confirm'.tr,
                           description: 'enter_processing_time_in_minutes'.tr, onPressed: (String? time){
+                            Get.back();
+                             Get.back();
                           Get.find<OrderController>().updateOrderStatus(controllerOrderModel.id, AppConstants.processing, processingTime: time).then((success) {
                             Get.back();
+                             Get.back();
                             if(success) {
                               Get.find<ProfileController>().getProfile();
                               Get.find<OrderController>().getCurrentOrders();

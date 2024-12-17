@@ -12,6 +12,7 @@ import 'package:sixam_mart_store/common/widgets/custom_snackbar_widget.dart';
 import 'package:get/get.dart';
 import 'package:sixam_mart_store/features/order/domain/services/order_service_interface.dart';
 import 'package:sixam_mart_store/helper/route_helper.dart';
+import 'package:sixam_mart_store/util/app_constants.dart';
 
 class OrderController extends GetxController implements GetxService {
   final OrderServiceInterface orderServiceInterface;
@@ -146,6 +147,7 @@ class OrderController extends GetxController implements GetxService {
     }
     update();
   }
+  
 
   Future<void> getCurrentOrders() async {
     List<OrderModel>? runningOrderList = await orderServiceInterface.getCurrentOrders();
@@ -318,8 +320,102 @@ class OrderController extends GetxController implements GetxService {
     update();
   }
 
+
+
+    static const List<String> statuses = [
+    "pending",
+    "confirmed",
+    "accepted",
+    "processing",
+    "handover",
+   
+  ];
+    // Updateorderstatusinsingleclick( int? orderID, String status, {bool back = false, String? reason, String? processingTime, bool fromNotification = false}) {
+
+    //   final int processingTime = processingTime.toInt();
+    //    final   time = processingTime / 4;
+    //    updateOrderStatus(orderID, AppConstants.confirmed,).then( (value) {
+    //      Future.delayed(Duration(seconds: time.toInt())).then((value) {
+
+    //     updateOrderStatus(orderID, AppConstants.handover,);
+    //   });
+    //    });
+
+
+     updateOrderStatusInSingleClick(
+    int? orderID,
+    String status, {
+    bool back = false,
+    String? reason,
+    String? processingTime,
+    bool fromNotification = false,
+  }) {
+  // Ensure processingTime is not null and parse it safely
+  final int? processingTimeInt = processingTime != null ? int.tryParse(processingTime) : null;
+
+  if (processingTimeInt == null || orderID == null) {
+    print("Invalid processing time or order ID");
+    return;
+  }
+
+  // Calculate time based on processingTime
+  final int time = processingTimeInt;
+
+  // // Update order status to confirmed
+  // updateOrderStatus(orderID, AppConstants.confirmed).then((value) {
+  //   Get.back();
+  //   // Delay for calculated time, then update to handover status
+  //   Future.delayed(Duration(minutes: time)).then((_) {
+  //     updateOrderStatus(orderID, AppConstants.handover);
+  //   });
+  // });
+
+
+      
+
+   updateOrderStatus(orderID, AppConstants.confirmed,).then( (value) {
+Get.back();
+    print("------------------Order Confirmed  forward to accepted in ${10} second------------------");
+  
+      Future.delayed(Duration(seconds: 1)).then((value) {
+
+          
+            updateOrderStatus(orderID, AppConstants.processing,).then( (value) {
+              print("------------------Order Accepted  forward to  handover in ${time} minute------------------");
+
+
+        Future.delayed(Duration(seconds: time)).then((value) {
+
+   updateOrderStatus(orderID, AppConstants.handover,);
+    //         updateOrderStatus(orderID, AppConstants.processing,).then( (value) {
+    // print("------------------Order processing  forward to handover in ${time } min------------------");
+
+    //     Future.delayed(Duration(minutes: (time ).toInt())).then((value) {
+    
+        
+    //         updateOrderStatus(orderID, AppConstants.handover,);
+    //     });
+    // });
+        });
+    });
+    
+
+
+        // Future.delayed(Duration(seconds: time.toInt())).then((value) {
+
+
+        // });
+    });
+
+
+});
+
+  //  updateOrderStatus(orderID, status,);
+   }
+
   String? getBluetoothMacAddress() => orderServiceInterface.getBluetoothAddress();
 
   void setBluetoothMacAddress(String? address) => orderServiceInterface.setBluetoothAddress(address);
+
 
 }

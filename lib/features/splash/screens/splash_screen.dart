@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:sixam_mart_store/features/auth/controllers/auth_controller.dart';
 import 'package:sixam_mart_store/features/dashboard/screens/dashboard_screen.dart';
+import 'package:sixam_mart_store/features/order/controllers/order_controller.dart';
 import 'package:sixam_mart_store/features/profile/controllers/profile_controller.dart';
 import 'package:sixam_mart_store/features/splash/controllers/splash_controller.dart';
 import 'package:sixam_mart_store/features/notification/domain/models/notification_body_model.dart';
@@ -49,6 +50,14 @@ class SplashScreenState extends State<SplashScreen> {
       firstTime = false;
     });
 
+
+ WidgetsBinding.instance.addPostFrameCallback((_) async {
+
+     
+     
+      await     Get.find<OrderController>().getCurrentOrders();
+
+    });
     Get.find<SplashController>().initSharedData();
     _route();
 

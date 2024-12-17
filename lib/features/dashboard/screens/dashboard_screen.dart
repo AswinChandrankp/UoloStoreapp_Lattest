@@ -11,7 +11,7 @@ import 'package:sixam_mart_store/features/payment/screens/wallet_screen.dart';
 import 'package:sixam_mart_store/features/dashboard/widgets/bottom_nav_item_widget.dart';
 import 'package:sixam_mart_store/features/home/screens/home_screen.dart';
 import 'package:sixam_mart_store/features/menu/screens/menu_screen.dart';
-import 'package:sixam_mart_store/features/order/screens/order_history_screen.dart';
+import 'package:sixam_mart_store/features/order/screens/orders_screen.dart';
 import 'package:sixam_mart_store/features/store/screens/store_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -27,7 +27,7 @@ class DashboardScreen extends StatefulWidget {
 
 class DashboardScreenState extends State<DashboardScreen> {
   PageController? _pageController;
-  int _pageIndex = 0;
+  int _pageIndex = 1;
   late List<Widget> _screens;
   FlutterLocalNotificationsPlugin? flutterLocalNotificationsPlugin;
   DisbursementHelper disbursementHelper = DisbursementHelper();
@@ -37,13 +37,13 @@ class DashboardScreenState extends State<DashboardScreen> {
   void initState() {
     super.initState();
 
-    _pageIndex = widget.pageIndex;
+    _pageIndex = 1;
 
-    _pageController = PageController(initialPage: widget.pageIndex);
+    _pageController = PageController(initialPage: 1);
 
     _screens = [
       const HomeScreen(),
-      const OrderHistoryScreen(),
+      const OrderScreen(),
       const StoreScreen(),
       const WalletScreen(),
       Container(),
@@ -85,14 +85,14 @@ class DashboardScreenState extends State<DashboardScreen> {
     return PopScope(
       canPop: false,
       onPopInvokedWithResult: (didPop, result) async{
-        if(_pageIndex != 0) {
-          _setPage(0);
+        if(_pageIndex != 1) {
+          _setPage(1);
         }else {
           if(_canExit) {
             if (GetPlatform.isAndroid) {
               SystemNavigator.pop();
             } else if (GetPlatform.isIOS) {
-              exit(0);
+              exit(1);
             }
           }
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
