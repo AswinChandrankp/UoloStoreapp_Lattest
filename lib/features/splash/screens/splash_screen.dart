@@ -55,7 +55,7 @@ class SplashScreenState extends State<SplashScreen> {
 
      
      
-      await     Get.find<OrderController>().getCurrentOrders();
+      await    Get.find<OrderController>().getCurrentOrders();
 
     });
     Get.find<SplashController>().initSharedData();
@@ -129,7 +129,7 @@ class SplashScreenState extends State<SplashScreen> {
     } else {
       final bool showIntro = Get.find<SplashController>().showIntro();
       if(AppConstants.languages.length > 1 && showIntro) {
-        Get.offNamed(RouteHelper.getLanguageRoute('splash'));
+        Get.offNamed(RouteHelper.getSignInRoute());
       }else {
         Get.offNamed(RouteHelper.getSignInRoute());
       }

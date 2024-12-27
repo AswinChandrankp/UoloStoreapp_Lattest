@@ -34,10 +34,10 @@ Future<void> main() async {
   if(GetPlatform.isAndroid) {
     await Firebase.initializeApp(
       options: const FirebaseOptions(
-        apiKey: "AIzaSyCc3OCd5I2xSlnftZ4bFAbuCzMhgQHLivA",
-        appId: "1:491987943015:android:9795ba69e89c684b8f1ec2",
-        messagingSenderId: "491987943015",
-        projectId: "stackmart-500c7",
+         apiKey: "AIzaSyBsKYkb4r9kQjiWIHMcHX8XQ9RGtpiUuf4",
+        appId: "1:349709842275:android:7c727b84f8560ad2c84556",
+        messagingSenderId: "349709842275",
+        projectId: "uolo-6b0e9",
       ),
     );
   }else {
@@ -77,6 +77,7 @@ class MyApp extends StatelessWidget {
     return GetBuilder<ThemeController>(builder: (themeController) {
       return GetBuilder<LocalizationController>(builder: (localizeController) {
         return GetMaterialApp(
+           
           title: AppConstants.appName,
           debugShowCheckedModeBanner: false,
           navigatorKey: Get.key,
@@ -90,6 +91,7 @@ class MyApp extends StatelessWidget {
           transitionDuration: const Duration(milliseconds: 500),
           builder: (BuildContext context, widget) {
             return MediaQuery(data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1)), child: Material(
+
               child: Stack(children: [
                 widget!,
 
@@ -122,3 +124,10 @@ class MyHttpOverrides extends HttpOverrides {
     return super.createHttpClient(context)..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
   }
 }
+
+
+
+
+
+
+

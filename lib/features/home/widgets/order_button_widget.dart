@@ -30,18 +30,19 @@ class OrderButtonWidget extends StatelessWidget {
       child: Row(children: [
 
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeDefault),
+          padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeExtremeLarge + 40),
           decoration: BoxDecoration(
+            border: Border.all(width: 1, color: Theme.of(context).disabledColor),
             borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
-            color: isSelected ? const Color(0xff93A2AE) : Theme.of(context).cardColor,
+            color: isSelected ?  ( title == "Pending" &&  length > 0) ? Colors.green :  Theme.of(context).primaryColor : ( title == "Pending" &&  length > 0) ? const Color.fromARGB(255, 165, 18, 8) :    Theme.of(context).cardColor,
           ),
           alignment: Alignment.center,
           child: Text(
-            '$title${fromHistory ? '' : isSelected ? ' ($length)' : ''}',
+            '$title   ${ length >0 ?  "(${  length})" : ""}',
             maxLines: 1, overflow: TextOverflow.ellipsis,
             style: robotoMedium.copyWith(
               fontSize: Dimensions.fontSizeDefault, fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
-              color: isSelected ? Theme.of(context).cardColor : Theme.of(context).disabledColor,
+              color: isSelected ?  Theme.of(context).cardColor :  ( title == "Pending" &&  length > 0) ?  Theme.of(context).cardColor : Theme.of(context).primaryColor,
             ),
           ),
         ),

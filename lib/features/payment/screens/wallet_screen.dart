@@ -1,4 +1,6 @@
 import 'package:sixam_mart_store/common/widgets/custom_bottom_sheet_widget.dart';
+import 'package:sixam_mart_store/features/menu/screens/menu_screen.dart';
+import 'package:sixam_mart_store/features/notification/controllers/notification_controller.dart';
 import 'package:sixam_mart_store/features/payment/controllers/payment_controller.dart';
 import 'package:sixam_mart_store/features/profile/controllers/profile_controller.dart';
 import 'package:sixam_mart_store/features/splash/controllers/splash_controller.dart';
@@ -42,7 +44,54 @@ class _WalletScreenState extends State<WalletScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      appBar: CustomAppBarWidget(title: 'wallet'.tr, isBackButtonExist: false),
+      appBar:  AppBar(
+        backgroundColor: Theme.of(context).cardColor,
+        // leading: Padding(
+        //   padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
+        //   child: Text("Uolo"),
+        // ),
+        titleSpacing: 0,
+        surfaceTintColor: Theme.of(context).cardColor,
+        shadowColor: Theme.of(context).disabledColor.withOpacity(0.5),
+        elevation: 0,
+        title: Padding(
+      padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
+          child: Text("Uolo", style: robotoRegular.copyWith(color:  Theme.of(context).primaryColor, fontSize: 30,fontWeight: FontWeight.w900)),
+        ),
+        actions: [IconButton(
+          icon: GetBuilder<NotificationController>(builder: (notificationController) {
+            return Stack(children: [
+              Icon(Icons.notifications, size: 25, color: Theme.of(context).primaryColor),
+              notificationController.hasNotification ? Positioned(top: 0, right: 0, child: Container(
+                height: 10, width: 10, decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor, shape: BoxShape.circle,
+                border: Border.all(width: 1, color: Theme.of(context).cardColor),
+              ),
+              )) : const SizedBox(),
+            ]);
+          }),
+          onPressed: () => Get.toNamed(RouteHelper.getNotificationRoute()),
+        ),
+
+         IconButton(
+          icon: GetBuilder<NotificationController>(builder: (notificationController) {
+            return Stack(children: [
+              Icon(Icons.menu, size: 25, color: Theme.of(context).primaryColor),
+              // notificationController.hasNotification ? Positioned(top: 0, right: 0, child: Container(
+              //   height: 10, width: 10, decoration: BoxDecoration(
+              //   color: Colors.redAccent, shape: BoxShape.circle,
+              //   border: Border.all(width: 1, color: Theme.of(context).cardColor),
+                
+              // ),
+              // )) : const SizedBox(),
+            ]);
+          }),
+          onPressed: () =>    Get.bottomSheet(const MenuScreen(), backgroundColor: Colors.transparent, isScrollControlled: true)),
+        
+        
+        ],
+      ),
+      
 
       body: GetBuilder<ProfileController>(builder: (profileController) {
         return GetBuilder<PaymentController>(builder: (bankController) {

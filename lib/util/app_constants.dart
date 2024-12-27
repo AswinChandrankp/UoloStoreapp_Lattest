@@ -5,7 +5,7 @@ class AppConstants {
   static const String appName = 'Uolo Store';
   static const double appVersion = 2.12; ///Flutter SDK: 3.24.5
 
-  static const String fontFamily = 'Roboto';
+  static const String fontFamily = 'Poppins';
   static const double limitOfPickedVideoSizeInMB = 50;
   static const double maxSizeOfASingleFile = 10;
 

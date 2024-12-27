@@ -15,7 +15,7 @@ class CustomAppBarWidget extends StatelessWidget implements PreferredSizeWidget 
   Widget build(BuildContext context) {
     return AppBar(
       title: titleWidget ?? Text(title!, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge, fontWeight: FontWeight.w600, color: Theme.of(context).textTheme.bodyLarge!.color)),
-      centerTitle: true,
+      centerTitle: false,
       leading: isBackButtonExist ? IconButton(
         icon: const Icon(Icons.arrow_back_ios),
         color: Theme.of(context).textTheme.bodyLarge!.color,

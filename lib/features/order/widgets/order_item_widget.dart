@@ -1,3 +1,4 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sixam_mart_store/features/splash/controllers/splash_controller.dart';
 import 'package:sixam_mart_store/features/store/domain/models/item_model.dart';
 import 'package:sixam_mart_store/features/order/domain/models/order_details_model.dart';
@@ -47,29 +48,74 @@ class OrderItemWidget extends StatelessWidget {
     
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Row(children: [
-        orderDetails.itemDetails!.imageFullUrl != null ? ClipRRect(
-          borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
-          child: CustomImageWidget(
-            height: 50, width: 50, fit: BoxFit.cover,
-            image: '${orderDetails.itemDetails!.imageFullUrl}',
-          ),
-        ) : const SizedBox(),
-        SizedBox(width: orderDetails.itemDetails!.imageFullUrl != null ? Dimensions.paddingSizeSmall : 0),
-
+        // orderDetails.itemDetails!.imageFullUrl != null ? ClipRRect(
+        //   borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
+        //   child: CustomImageWidget(
+        //     height:60, width: 60, fit: BoxFit.cover,
+        //     image: '${orderDetails.itemDetails!.imageFullUrl}',
+        //   ),
+        // ) : const SizedBox(),
+        // SizedBox(width: orderDetails.itemDetails!.imageFullUrl != null ? Dimensions.paddingSizeSmall : 0),
+   SizedBox(width: 5,),
         Expanded(
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start
+          
+          , children: [
             Row(children: [
+              
+  // Text('')
+              // Icon(Icons.square.dot)
+             Container(
+              width: 15,
+              height: 15,
+              decoration: BoxDecoration(
+                 border: Border.all(
+                  color:  orderDetails.itemDetails!.veg != 0  ||  orderDetails.itemDetails!.unitType == "Veg"  ? Colors.green : Colors.redAccent
+                 )  ,
+                // color: orderDetails.itemDetails!.veg != 0  ||  orderDetails.itemDetails!.unitType == "Veg"  ? Colors.green : Colors.redAccent
+              ),
+               child: Padding(
+                 padding: const EdgeInsets.all(1),
+                 child: Container(
+                  height: 10,
+                  width: 10,
+                  decoration: BoxDecoration(
+                     color:  orderDetails.itemDetails!.veg != 0  ||  orderDetails.itemDetails!.unitType == "Veg"  ? Colors.green : Colors.redAccent,
+                     borderRadius: BorderRadius.circular(50)
+                  ),
+                 
+                 ),
+               ),
+             ),
+                SizedBox(width: 5,),
               Expanded(child: Text(
-                orderDetails.itemDetails!.name!,
+                " ${ orderDetails.quantity}  X ${orderDetails.itemDetails!.name!}",
+                
                 style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
                 maxLines: 2, overflow: TextOverflow.ellipsis,
               )),
-              Text('${'quantity'.tr}:', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
-              Text(
-                orderDetails.quantity.toString(),
-                style: robotoMedium.copyWith(color: Theme.of(context).primaryColor, fontSize: Dimensions.fontSizeSmall),
-              ),
+              // Text('${'quantity'.tr}:', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+              // Text(
+              //   orderDetails.quantity.toString(),
+              //   style: robotoMedium.copyWith(color: Theme.of(context).primaryColor, fontSize: Dimensions.fontSizeSmall),
+              // ),
             ]),
+
+             variationText.isNotEmpty ? Padding(
+        padding: const EdgeInsets.only(top: Dimensions.paddingSizeExtraSmall),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [ 
+          // const SizedBox(width: 60),
+          Text('${'variations'.tr}: ', style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall,color: Theme.of(context).disabledColor )),
+          Flexible(child: Text(
+              variationText,
+              style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor,
+          ))),
+        ]),
+      ) : const SizedBox(),
             const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
             Row(children: [
@@ -77,19 +123,19 @@ class OrderItemWidget extends StatelessWidget {
                 PriceConverterHelper.convertPrice(orderDetails.price),
                 style: robotoMedium,
               )),
-              ((Get.find<SplashController>().configModel!.moduleConfig!.module!.unit! && orderDetails.itemDetails!.unitType != null)
-              || (Get.find<SplashController>().configModel!.moduleConfig!.module!.vegNonVeg! && Get.find<SplashController>().configModel!.toggleVegNonVeg!)) ? Container(
-                padding: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeExtraSmall, horizontal: Dimensions.paddingSizeSmall),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
-                  color: Theme.of(context).primaryColor.withOpacity(0.1),
-                ),
-                child: Text(
-                  Get.find<SplashController>().configModel!.moduleConfig!.module!.unit! ? orderDetails.itemDetails!.unitType ?? ''
-                      : orderDetails.itemDetails!.veg == 0 ? 'non_veg'.tr : 'veg'.tr,
-                  style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).primaryColor),
-                ),
-              ) : const SizedBox(),
+              // ((Get.find<SplashController>().configModel!.moduleConfig!.module!.unit! && orderDetails.itemDetails!.unitType != null)
+              // || (Get.find<SplashController>().configModel!.moduleConfig!.module!.vegNonVeg! && Get.find<SplashController>().configModel!.toggleVegNonVeg!)) ? Container(
+              //   padding: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeExtraSmall, horizontal: Dimensions.paddingSizeSmall),
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
+              //     color: Theme.of(context).primaryColor.withOpacity(0.1),
+              //   ),
+              //   child: Text(
+              //     Get.find<SplashController>().configModel!.moduleConfig!.module!.unit! ? orderDetails.itemDetails!.unitType ?? ''
+              //         : orderDetails.itemDetails!.veg == 0 ? 'non_veg'.tr : 'veg'.tr,
+              //     style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).primaryColor),
+              //   ),
+              // ) : const SizedBox(),
             ]),
 
           ]),
@@ -99,7 +145,7 @@ class OrderItemWidget extends StatelessWidget {
       addOnText.isNotEmpty ? Padding(
         padding: const EdgeInsets.only(top: Dimensions.paddingSizeExtraSmall),
         child: Row(children: [
-          const SizedBox(width: 60),
+          const SizedBox(width: 70),
           Text('${'addons'.tr}: ', style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall)),
           Flexible(child: Text(
               addOnText,
@@ -108,17 +154,17 @@ class OrderItemWidget extends StatelessWidget {
         ]),
       ) : const SizedBox(),
 
-      variationText.isNotEmpty ? Padding(
-        padding: const EdgeInsets.only(top: Dimensions.paddingSizeExtraSmall),
-        child: Row(children: [
-          const SizedBox(width: 60),
-          Text('${'variations'.tr}: ', style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall)),
-          Flexible(child: Text(
-              variationText,
-              style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor,
-          ))),
-        ]),
-      ) : const SizedBox(),
+      // variationText.isNotEmpty ? Padding(
+      //   padding: const EdgeInsets.only(top: Dimensions.paddingSizeExtraSmall),
+      //   child: Row(children: [
+      //     const SizedBox(width: 60),
+      //     Text('${'variations'.tr}: ', style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall)),
+      //     Flexible(child: Text(
+      //         variationText,
+      //         style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor,
+      //     ))),
+      //   ]),
+      // ) : const SizedBox(),
 
       const Divider(height: Dimensions.paddingSizeLarge),
       const SizedBox(height: Dimensions.paddingSizeSmall),

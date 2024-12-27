@@ -55,6 +55,10 @@ dependencies:
   video_player: ^2.9.1
   chewie: ^1.8.4
   fluttertoast: ^8.2.8
+  google_fonts: ^6.2.1
+  font_awesome_flutter: ^10.4.0
+  lottie: ^3.2.0
+  firebase_analytics: ^11.3.6
 
 dependency_overrides:
   collection: ^1.19.0
@@ -72,16 +76,17 @@ flutter:
   assets:
     - assets/image/
     - assets/language/
-    - assets/notification.mp3
+    - assets/notification.wav
+    - assets/image/animations/Animation - 1734685956987.json
 
-  fonts:
-    - family: Roboto
+fonts:
+    - family: Poppins
       fonts:
-        - asset: assets/font/Roboto-Regular.ttf
+        - asset: assets/font/Poppins/Poppins-Regular.ttf
           weight: 400
-        - asset: assets/font/Roboto-Medium.ttf
+        - asset: assets/font/Poppins/Poppins-Medium.ttf
           weight: 500
-        - asset: assets/font/Roboto-Bold.ttf
+        - asset: assets/font/Poppins/Poppins-Bold.ttf
           weight: 700
-        - asset: assets/font/Roboto-Black.ttf
+        - asset: assets/font/Poppins/Poppins-Black.ttf
           weight: 900

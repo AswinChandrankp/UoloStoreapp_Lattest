@@ -27,6 +27,15 @@ class OrderController extends GetxController implements GetxService {
   List<RunningOrderModel>? _runningOrders;
   List<RunningOrderModel>? get runningOrders => _runningOrders;
 
+   List<RunningOrderModel>? _allrunningOrders;
+  List<RunningOrderModel>? get allrunningOrders => _allrunningOrders;
+
+  
+  List<OrderModel>? _allrunningOrderList;
+  List<OrderModel>? get allrunningOrderList => _allrunningOrderList;
+
+
+
   List<OrderModel>? _historyOrderList;
   List<OrderModel>? get historyOrderList => _historyOrderList;
 
@@ -48,7 +57,7 @@ class OrderController extends GetxController implements GetxService {
   int _historyIndex = 0;
   int get historyIndex => _historyIndex;
 
-  final List<String> _statusList = ['all', 'delivered', 'refunded'];
+  final List<String> _statusList = ['all','delivered', 'refunded',];
   List<String> get statusList => _statusList;
 
   bool _paginate = false;
@@ -148,17 +157,22 @@ class OrderController extends GetxController implements GetxService {
     update();
   }
   
+  
 
   Future<void> getCurrentOrders() async {
     List<OrderModel>? runningOrderList = await orderServiceInterface.getCurrentOrders();
     if(runningOrderList != null) {
       _runningOrderList = [];
       _runningOrders = [
+        // RunningOrderModel(status: 'All', orderList: []),
+           RunningOrderModel(status: 'All', orderList: []),
         RunningOrderModel(status: 'pending', orderList: []),
         RunningOrderModel(status: 'confirmed', orderList: []),
         RunningOrderModel(status: Get.find<SplashController>().configModel!.moduleConfig!.module!.showRestaurantText! ? 'cooking' : 'processing', orderList: []),
         RunningOrderModel(status: 'ready_for_handover', orderList: []),
         RunningOrderModel(status: 'food_on_the_way', orderList: []),
+       
+      
       ];
       _runningOrderList!.addAll(runningOrderList);
       _campaignOnly = true;
@@ -167,6 +181,26 @@ class OrderController extends GetxController implements GetxService {
     update();
   }
 
+
+
+  Future<void> getallCurrentOrders() async {
+    List<OrderModel>? allrunningOrderList = await orderServiceInterface.getCurrentOrders();
+    if(allrunningOrderList != null) {
+      _allrunningOrderList = [];
+      _allrunningOrders = [
+        // // RunningOrderModel(status: 'All', orderList: []),
+        // RunningOrderModel(status: 'pending', orderList: []),
+        // RunningOrderModel(status: 'confirmed', orderList: []),
+        // RunningOrderModel(status: Get.find<SplashController>().configModel!.moduleConfig!.module!.showRestaurantText! ? 'cooking' : 'processing', orderList: []),
+        // RunningOrderModel(status: 'ready_for_handover', orderList: []),
+        // RunningOrderModel(status: 'food_on_the_way', orderList: []),
+      ];
+      _allrunningOrderList!.addAll(allrunningOrderList);
+      _campaignOnly = true;
+      toggleCampaignOnly();
+    }
+    update();
+  }
   Future<void> getPaginatedOrders(int offset, bool reload) async {
     if(offset == 1 || reload) {
       _offsetList = [];
@@ -276,6 +310,28 @@ class OrderController extends GetxController implements GetxService {
     }
   }
 
+
+  Future<List<OrderDetailsModel>?> getOrderItemsDetailsIncard(int orderID) async {
+    // _orderDetailsModel = null;
+    // if(_orderModel != null && !_orderModel!.prescriptionOrder!){
+      // List<OrderDetailsModel>? data = await orderServiceInterface.getOrderDetails(orderID);
+      // if(orderDetailsModel != null) {
+      //   _orderDetailsModel = [];
+      //   _orderDetailsModel!.addAll(orderDetailsModel);
+      // }
+      // update();
+            List<OrderDetailsModel>?   data = await orderServiceInterface.getOrderDetails(orderID);
+       return data ;
+    // }else{
+    //   _orderDetailsModel = [];
+      
+    // }
+
+
+   
+  }
+
+
   void setOrderIndex(int index) {
     _orderIndex = index;
     update();
@@ -283,26 +339,31 @@ class OrderController extends GetxController implements GetxService {
 
   void toggleCampaignOnly() {
     _campaignOnly = !_campaignOnly;
-    _runningOrders![0].orderList = [];
+  _runningOrders![0].orderList = [];
     _runningOrders![1].orderList = [];
     _runningOrders![2].orderList = [];
     _runningOrders![3].orderList = [];
     _runningOrders![4].orderList = [];
+    _runningOrders![5].orderList = [];
+        
     for (var order in _runningOrderList!) {
+      
       if(order.orderStatus == 'pending' && (Get.find<SplashController>().configModel!.orderConfirmationModel != 'deliveryman'
           || order.orderType == 'take_away' || Get.find<ProfileController>().profileModel!.stores![0].selfDeliverySystem == 1)
           && (_campaignOnly ? order.itemCampaign == 1 : true)) {
-        _runningOrders![0].orderList.add(order);
+        _runningOrders![1].orderList.add(order);
       }else if((order.orderStatus == 'confirmed' || (order.orderStatus == 'accepted' && order.confirmed != null))
           && (_campaignOnly ? order.itemCampaign == 1 : true)) {
-        _runningOrders![1].orderList.add(order);
-      }else if(order.orderStatus == 'processing' && (_campaignOnly ? order.itemCampaign == 1 : true)) {
         _runningOrders![2].orderList.add(order);
-      }else if(order.orderStatus == 'handover' && (_campaignOnly ? order.itemCampaign == 1 : true)) {
+      }else if(order.orderStatus == 'processing' && (_campaignOnly ? order.itemCampaign == 1 : true)) {
         _runningOrders![3].orderList.add(order);
-      }else if(order.orderStatus == 'picked_up' && (_campaignOnly ? order.itemCampaign == 1 : true)) {
+      }else if(order.orderStatus == 'handover' && (_campaignOnly ? order.itemCampaign == 1 : true)) {
         _runningOrders![4].orderList.add(order);
-      }
+      }else if(order.orderStatus == 'picked_up' && (_campaignOnly ? order.itemCampaign == 1 : true)) {
+        _runningOrders![5].orderList.add(order);
+      } 
+       _runningOrders![0].orderList.add(order);
+       
     }
     update();
   }
@@ -384,7 +445,7 @@ Get.back();
               print("------------------Order Accepted  forward to  handover in ${time} minute------------------");
 
 
-        Future.delayed(Duration(seconds: time)).then((value) {
+        Future.delayed(Duration(minutes: time)).then((value) {
 
    updateOrderStatus(orderID, AppConstants.handover,);
     //         updateOrderStatus(orderID, AppConstants.processing,).then( (value) {

@@ -1,7 +1,9 @@
 import 'dart:async';
 
+import 'package:sixam_mart_store/common/widgets/order_card_new.dart';
 import 'package:sixam_mart_store/common/widgets/order_shimmer_widget.dart';
 import 'package:sixam_mart_store/common/widgets/order_widget.dart';
+import 'package:sixam_mart_store/features/menu/screens/menu_screen.dart';
 import 'package:sixam_mart_store/features/notification/controllers/notification_controller.dart';
 import 'package:sixam_mart_store/features/order/controllers/order_controller.dart';
 import 'package:sixam_mart_store/features/order/domain/models/order_model.dart';
@@ -42,20 +44,22 @@ class _OrderScreenState extends State<OrderScreen> {
   @override
   void initState() {
     super.initState();
-    startTimer(); // Call the timer function here
+    startTimer(); 
   }
 
   void startTimer() {
     _timer = Timer.periodic(Duration(seconds: 5), (timer) {
-      // Fetch orders every 5 seconds
+  
       print('------------------------------------------------------------Fetching orders...-----------------------------------------------');
+    
+    
       Get.find<OrderController>().getCurrentOrders();
     });
   }
 
   @override
   void dispose() {
-    _timer?.cancel(); // Cancel the timer when the widget is disposed
+    _timer?.cancel(); 
     super.dispose();
   }
   Widget build(BuildContext context) {
@@ -67,17 +71,18 @@ class _OrderScreenState extends State<OrderScreen> {
       appBar:
        AppBar(
         backgroundColor: Theme.of(context).cardColor,
-        leading: Padding(
-          padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
-          child: Image.asset(Images.logo, height: 30, width: 30),
-        ),
+        // leading: Padding(
+        //   padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
+        //   child: Text("Uolo"),
+        // ),
         titleSpacing: 0,
         surfaceTintColor: Theme.of(context).cardColor,
         shadowColor: Theme.of(context).disabledColor.withOpacity(0.5),
-        elevation: 2,
-        title: Text(AppConstants.appName, maxLines: 1, overflow: TextOverflow.ellipsis, style: robotoMedium.copyWith(
-          color: Theme.of(context).textTheme.bodyLarge!.color, fontSize: Dimensions.fontSizeDefault,
-        )),
+        elevation: 0,
+        title: Padding(
+      padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
+          child: Text("Uolo", style: robotoRegular.copyWith(color:  Theme.of(context).primaryColor, fontSize: 30,fontWeight: FontWeight.w900)),
+        ),
         actions: [IconButton(
           icon: GetBuilder<NotificationController>(builder: (notificationController) {
             return Stack(children: [
@@ -91,7 +96,24 @@ class _OrderScreenState extends State<OrderScreen> {
             ]);
           }),
           onPressed: () => Get.toNamed(RouteHelper.getNotificationRoute()),
-        )],
+        ),
+        IconButton(
+          icon: GetBuilder<NotificationController>(builder: (notificationController) {
+            return Stack(children: [
+              Icon(Icons.menu, size: 25, color: Theme.of(context).primaryColor),
+              // notificationController.hasNotification ? Positioned(top: 0, right: 0, child: Container(
+              //   height: 10, width: 10, decoration: BoxDecoration(
+              //   color: Colors.redAccent, shape: BoxShape.circle,
+              //   border: Border.all(width: 1, color: Theme.of(context).cardColor),
+                
+              // ),
+              // )) : const SizedBox(),
+            ]);
+          }),
+          onPressed: () =>    Get.bottomSheet(const MenuScreen(), backgroundColor: Colors.transparent, isScrollControlled: true)),
+        
+        
+        ],
       ),
       //  CustomAppBarWidget(title: 'order_history'.tr, isBackButtonExist: false),
       body: GetBuilder<OrderController>(builder: (orderController) {
@@ -151,44 +173,47 @@ class _OrderScreenState extends State<OrderScreen> {
                         orderController.runningOrders != null ? Container(
                           height: 40,
                           decoration: BoxDecoration(
-                            border: Border.all(color: Theme.of(context).disabledColor, width: 1),
+                            // border: Border.all(color: Theme.of(context).disabledColor, width: 1),
                             borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
                           ),
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
                             itemCount: orderController.runningOrders!.length,
                             itemBuilder: (context, index) {
-                              return OrderButtonWidget(
-                                title: orderController.runningOrders![index].status.tr, index: index,
-                                orderController: orderController, fromHistory: false,
+                              return Padding(
+                                padding: const EdgeInsets.only(left: 5,right: 5),
+                                child: OrderButtonWidget(
+                                  title: orderController.runningOrders![index].status.tr, index: index,
+                                  orderController: orderController, fromHistory: false,
+                                ),
                               );
                             },
                           ),
                         ) : const SizedBox(),
+                   SizedBox(  height: 10,),
+                        // orderController.runningOrders != null ? Padding(
+                        //   padding: const EdgeInsets.only(top: Dimensions.paddingSizeDefault, bottom: Dimensions.paddingSizeSmall),
+                        //   child: InkWell(
+                        //     onTap: () => orderController.toggleCampaignOnly(),
+                        //     child: Row(children: [
+                        //       SizedBox(
+                        //         height: 24, width: 24,
+                        //         child: Checkbox(
+                        //           side: BorderSide(color: Theme.of(context).disabledColor, width: 1),
+                        //           activeColor: Theme.of(context).primaryColor,
+                        //           value: orderController.campaignOnly,
+                        //           onChanged: (isActive) => orderController.toggleCampaignOnly(),
+                        //         ),
+                        //       ),
+                        //       const SizedBox(width: Dimensions.paddingSizeSmall),
                   
-                        orderController.runningOrders != null ? Padding(
-                          padding: const EdgeInsets.only(top: Dimensions.paddingSizeDefault, bottom: Dimensions.paddingSizeSmall),
-                          child: InkWell(
-                            onTap: () => orderController.toggleCampaignOnly(),
-                            child: Row(children: [
-                              SizedBox(
-                                height: 24, width: 24,
-                                child: Checkbox(
-                                  side: BorderSide(color: Theme.of(context).disabledColor, width: 1),
-                                  activeColor: Theme.of(context).primaryColor,
-                                  value: orderController.campaignOnly,
-                                  onChanged: (isActive) => orderController.toggleCampaignOnly(),
-                                ),
-                              ),
-                              const SizedBox(width: Dimensions.paddingSizeSmall),
-                  
-                              Text(
-                                'campaign_order'.tr,
-                                style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
-                              ),
-                            ]),
-                          ),
-                        ) : const SizedBox(),
+                        // //       Text(
+                        //         'campaign_order'.tr,
+                        //         style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                        //       ),
+                        //     ]),
+                        //   ),
+                        // ) : const SizedBox(),
                   
                         orderController.runningOrders != null ? orderList.isNotEmpty ? ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),

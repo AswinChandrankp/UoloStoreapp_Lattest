@@ -111,20 +111,20 @@ class DashboardScreenState extends State<DashboardScreen> {
       },
       child: Scaffold(
 
-        floatingActionButton: !GetPlatform.isMobile ? null : Material(
-          elevation: 5,
-          shape: const CircleBorder(),
-          child: FloatingActionButton(
-            backgroundColor: _pageIndex == 2 ? Theme.of(context).primaryColor : Theme.of(context).cardColor,
-            onPressed: () {
-              _setPage(2);
-            },
-            child: Image.asset(
-              Images.restaurant, height: 20, width: 20,
-              color: _pageIndex == 2 ? Theme.of(context).cardColor : Theme.of(context).disabledColor,
-            ),
-          ),
-        ),
+        // floatingActionButton: !GetPlatform.isMobile ? null : Material(
+        //   elevation: 5,
+        //   shape: const CircleBorder(),
+        //   child: FloatingActionButton(
+        //     backgroundColor: _pageIndex == 2 ? Theme.of(context).primaryColor : Theme.of(context).cardColor,
+        //     onPressed: () {
+        //       _setPage(2);
+        //     },
+        //     child: Image.asset(
+        //       Images.restaurant, height: 20, width: 20,
+        //       color: _pageIndex == 2 ? Theme.of(context).cardColor : Theme.of(context).disabledColor,
+        //     ),
+        //   ),
+        // ),
         floatingActionButtonLocation: !GetPlatform.isMobile ? null : FloatingActionButtonLocation.centerDocked,
 
         bottomNavigationBar: !GetPlatform.isMobile ? const SizedBox() : BottomAppBar(
@@ -134,15 +134,16 @@ class DashboardScreenState extends State<DashboardScreen> {
           shape: const CircularNotchedRectangle(),
 
           child: Padding(
-            padding: const EdgeInsets.all(Dimensions.paddingSizeExtraSmall),
+            padding: const EdgeInsets.all(0),
             child: Row(children: [
-              BottomNavItemWidget(iconData: Icons.home, isSelected: _pageIndex == 0, onTap: () => _setPage(0)),
-              BottomNavItemWidget(iconData: Icons.shopping_bag, isSelected: _pageIndex == 1, onTap: () => _setPage(1)),
-              const Expanded(child: SizedBox()),
-              BottomNavItemWidget(iconData: Icons.monetization_on, isSelected: _pageIndex == 3, onTap: () => _setPage(3)),
-              BottomNavItemWidget(iconData: Icons.menu, isSelected: _pageIndex == 4, onTap: () {
-                Get.bottomSheet(const MenuScreen(), backgroundColor: Colors.transparent, isScrollControlled: true);
-              }),
+              BottomNavItemWidget(iconData: Icons.home, isSelected: _pageIndex == 0, onTap: () => _setPage(0), name: 'Home',),
+              BottomNavItemWidget(iconData: Icons.pending_actions, isSelected: _pageIndex == 1, onTap: () => _setPage(1), name: 'Orders',),
+              // const Expanded(child: SizedBox()),
+              BottomNavItemWidget(iconData: Icons.store, isSelected: _pageIndex == 2, onTap: () => _setPage(2), name: 'Store',),
+              BottomNavItemWidget(iconData: Icons.monetization_on, isSelected: _pageIndex == 3, onTap: () => _setPage(3), name: 'wallet',),
+              // BottomNavItemWidget(iconData: Icons.menu, isSelected: _pageIndex == 4, onTap: () {
+              //   Get.bottomSheet(const MenuScreen(), backgroundColor: Colors.transparent, isScrollControlled: true);
+              // }),
             ]),
           ),
         ),

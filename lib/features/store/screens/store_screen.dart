@@ -1,3 +1,6 @@
+import 'package:sixam_mart_store/common/widgets/custom_app_bar_widget.dart';
+import 'package:sixam_mart_store/features/menu/screens/menu_screen.dart';
+import 'package:sixam_mart_store/features/notification/controllers/notification_controller.dart';
 import 'package:sixam_mart_store/features/store/controllers/store_controller.dart';
 import 'package:sixam_mart_store/features/profile/controllers/profile_controller.dart';
 import 'package:sixam_mart_store/features/splash/controllers/splash_controller.dart';
@@ -31,6 +34,8 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
   void initState() {
     super.initState();
 
+  
+
     Get.find<ProfileController>().getProfile();
     _tabController = TabController(length: _review! ? 2 : 1, initialIndex: 0, vsync: this);
     _tabController!.addListener(() {
@@ -38,6 +43,10 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
     });
     Get.find<StoreController>().getItemList('1', 'all', willUpdate: false);
     Get.find<StoreController>().getStoreReviewList(Get.find<ProfileController>().profileModel!.stores![0].id, '', willUpdate: false);
+ 
+   
+
+     
   }
 
   @override
@@ -57,6 +66,53 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
         }
 
         return Scaffold(
+
+          appBar:    AppBar(
+        backgroundColor: Theme.of(context).cardColor,
+        // leading: Padding(
+        //   padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
+        //   child: Text("Uolo"),
+        // ),
+        titleSpacing: 0,
+        surfaceTintColor: Theme.of(context).cardColor,
+        shadowColor: Theme.of(context).disabledColor.withOpacity(0.5),
+        elevation: 0,
+        title: Padding(
+      padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
+          child: Text("Uolo", style: robotoRegular.copyWith(color:  Theme.of(context).primaryColor, fontSize: 30,fontWeight: FontWeight.w900)),
+        ),
+        actions: [IconButton(
+          icon: GetBuilder<NotificationController>(builder: (notificationController) {
+            return Stack(children: [
+              Icon(Icons.notifications, size: 25, color: Theme.of(context).textTheme.bodyLarge!.color),
+              notificationController.hasNotification ? Positioned(top: 0, right: 0, child: Container(
+                height: 10, width: 10, decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor, shape: BoxShape.circle,
+                border: Border.all(width: 1, color: Theme.of(context).cardColor),
+              ),
+              )) : const SizedBox(),
+            ]);
+          }),
+          onPressed: () => Get.toNamed(RouteHelper.getNotificationRoute()),
+        ),
+        
+        IconButton(
+          icon: GetBuilder<NotificationController>(builder: (notificationController) {
+            return Stack(children: [
+              Icon(Icons.menu, size: 25, color: Theme.of(context).primaryColor),
+              // notificationController.hasNotification ? Positioned(top: 0, right: 0, child: Container(
+              //   height: 10, width: 10, decoration: BoxDecoration(
+              //   color: Colors.redAccent, shape: BoxShape.circle,
+              //   border: Border.all(width: 1, color: Theme.of(context).cardColor),
+                
+              // ),
+              // )) : const SizedBox(),
+            ]);
+          }),
+          onPressed: () =>    Get.bottomSheet(const MenuScreen(), backgroundColor: Colors.transparent, isScrollControlled: true)),
+        ],
+      ),
+   
           backgroundColor: Theme.of(context).cardColor,
 
           floatingActionButton: GetBuilder<StoreController>(builder: (storeController) {
@@ -67,10 +123,15 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
                 onPressed: () {
                   if(Get.find<ProfileController>().profileModel!.stores![0].itemSection!) {
                     if (store != null) {
+
                       Get.toNamed(RouteHelper.getAddItemRoute(null));
+
                     }
                   }else {
                     showCustomSnackBar('this_feature_is_blocked_by_admin'.tr);
+
+
+
                   }
                 },
                 backgroundColor: Theme.of(context).primaryColor,
@@ -84,35 +145,35 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
             controller: _scrollController,
             slivers: [
 
-              SliverAppBar(
-                expandedHeight: 230, toolbarHeight: 50,
-                pinned: true, floating: false,
-                backgroundColor: Theme.of(context).primaryColor,
-                actions: [IconButton(
-                  icon: Container(
-                    height: 50, width: 40, alignment: Alignment.center,
-                    padding: const EdgeInsets.all(7),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
-                      border: Border.all(color: Theme.of(context).cardColor.withOpacity(0.7), width: 1.5),
-                    ),
-                    child: Icon(Icons.edit, color: Theme.of(context).cardColor, size: 20),
-                  ),
-                  onPressed: () {
-                    if(Get.find<ProfileController>().modulePermission!.storeSetup! && Get.find<ProfileController>().modulePermission!.myShop!){
-                      Get.toNamed(RouteHelper.getStoreSettingsRoute(store));
-                    }else{
-                      showCustomSnackBar('access_denied'.tr);
-                    }
-                  },
-                )],
-                flexibleSpace: FlexibleSpaceBar(
-                  background: CustomImageWidget(
-                    fit: BoxFit.cover, placeholder: Images.restaurantCover,
-                    image: '${store.coverPhotoFullUrl}',
-                  ),
-                ),
-              ),
+              // SliverAppBar(
+              //   expandedHeight: 230, toolbarHeight: 50,
+              //   pinned: true, floating: false,
+              //   backgroundColor: Theme.of(context).primaryColor,
+              //   actions: [IconButton(
+              //     icon: Container(
+              //       height: 50, width: 40, alignment: Alignment.center,
+              //       padding: const EdgeInsets.all(7),
+              //       decoration: BoxDecoration(
+              //         color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
+              //         border: Border.all(color: Theme.of(context).cardColor.withOpacity(0.7), width: 1.5),
+              //       ),
+              //       child: Icon(Icons.edit, color: Theme.of(context).cardColor, size: 20),
+              //     ),
+              //     onPressed: () {
+              //       if(Get.find<ProfileController>().modulePermission!.storeSetup! && Get.find<ProfileController>().modulePermission!.myShop!){
+              //         Get.toNamed(RouteHelper.getStoreSettingsRoute(store));
+              //       }else{
+              //         showCustomSnackBar('access_denied'.tr);
+              //       }
+              //     },
+              //   )],
+              //   flexibleSpace: FlexibleSpaceBar(
+              //     background: CustomImageWidget(
+              //       fit: BoxFit.cover, placeholder: Images.restaurantCover,
+              //       image: '${store.coverPhotoFullUrl}',
+              //     ),
+              //   ),
+              // ),
 
               SliverToBoxAdapter(child: Center(child: Container(
                 width: 1170,
@@ -162,19 +223,19 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
 
                     ])),
 
-                    InkWell(
-                      onTap: () => Get.toNamed(RouteHelper.getAnnouncementRoute(announcementStatus: store.isAnnouncementActive!, announcementMessage: store.announcementMessage ?? '')),
-                      child: Container(
-                        padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Theme.of(context).primaryColor,
-                          border: Border.all(color: Theme.of(context).cardColor, width: 2),
-                          boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.2), spreadRadius: 1, blurRadius: 5, offset: const Offset(0, 1))],
-                        ),
-                        child: Image.asset(Images.announcementIcon, height: 20, width: 20, color: Theme.of(context).cardColor),
-                      ),
-                    ),
+                    // InkWell(
+                    //   onTap: () => Get.toNamed(RouteHelper.getAnnouncementRoute(announcementStatus: store.isAnnouncementActive!, announcementMessage: store.announcementMessage ?? '')),
+                    //   child: Container(
+                    //     padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
+                    //     decoration: BoxDecoration(
+                    //       shape: BoxShape.circle,
+                    //       color: Theme.of(context).primaryColor,
+                    //       border: Border.all(color: Theme.of(context).cardColor, width: 2),
+                    //       boxShadow: [BoxShadow(color: Colors.grey.withOpacity(0.2), spreadRadius: 1, blurRadius: 5, offset: const Offset(0, 1))],
+                    //     ),
+                    //     child: Image.asset(Images.announcementIcon, height: 20, width: 20, color: Theme.of(context).cardColor),
+                    //   ),
+                    // ),
                   ]),
                   SizedBox(height: store.discount != null ? Dimensions.paddingSizeDefault : 0),
 

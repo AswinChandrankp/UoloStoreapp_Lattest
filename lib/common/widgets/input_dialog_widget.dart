@@ -105,14 +105,14 @@ import 'package:sixam_mart_store/common/widgets/custom_text_field_widget.dart';
 
 
 class InputDialogWidget extends StatefulWidget {
-  final String icon;
+  final icon;
   final String? title;
   final String description;
   final Function(String? value) onPressed;
 
   const InputDialogWidget({
     super.key,
-    required this.icon,
+    this.icon,
     this.title,
     required this.description,
     required this.onPressed,
@@ -131,23 +131,27 @@ class _InputDialogWidgetState extends State<InputDialogWidget> {
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
+        borderRadius: BorderRadius.circular(Dimensions.radiusLarge),
       ),
       insetPadding: const EdgeInsets.all(30),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: SizedBox(
-        width: 500,
+        width: 400,
         child: Padding(
           padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+
+                Align(
+                  alignment: Alignment.topRight,
+                  child: IconButton(onPressed: () => Get.back(), icon: const Icon(Icons.close, color: Colors.black))),
                 // Icon
-                Padding(
-                  padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
-                  child: Image.asset(widget.icon, width: 50, height: 50),
-                ),
+                // widget.icon! != null ? Padding(
+                //   padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
+                //   child:  Image.asset(widget.icon ?? "", width: 50, height: 50),
+                // ) : SizedBox(),
 
                 // Title
                 if (widget.title != null)
@@ -155,7 +159,7 @@ class _InputDialogWidgetState extends State<InputDialogWidget> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: Dimensions.paddingSizeLarge),
                     child: Text(
-                      widget.title!,
+                      widget.title?? "",
                       textAlign: TextAlign.center,
                       style: robotoMedium.copyWith(
                           fontSize: Dimensions.fontSizeExtraLarge,
@@ -164,17 +168,20 @@ class _InputDialogWidgetState extends State<InputDialogWidget> {
                   ),
 
                 // Description
-                Padding(
-                  padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
-                  child: Text(
-                    widget.description,
-                    style: robotoMedium.copyWith(
-                        fontSize: Dimensions.fontSizeLarge),
-                    textAlign: TextAlign.center,
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10,bottom: 10),
+                    child: Text(
+                      widget.description,
+                      style: robotoMedium.copyWith(
+                          fontSize: Dimensions.fontSizeLarge),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
 
-                const SizedBox(height: Dimensions.paddingSizeLarge),
+                // const SizedBox(height: Dimensions.paddingSizeLarge),
             //  Column(
             //             children: [
             //               RadioListTile<String>(
@@ -219,7 +226,7 @@ class _InputDialogWidgetState extends State<InputDialogWidget> {
 
 
             Row(
-  mainAxisAlignment: MainAxisAlignment.center,
+  mainAxisAlignment: MainAxisAlignment.start,
   children: [
     // 10 Minutes Option
     GestureDetector(
@@ -405,33 +412,34 @@ class _InputDialogWidgetState extends State<InputDialogWidget> {
                                 height: 40,
                               ),
                             ),
-                            const SizedBox(
-                                width: Dimensions.paddingSizeLarge),
-                            Expanded(
-                              child: TextButton(
-                                onPressed: () => Get.back(),
-                                style: TextButton.styleFrom(
-                                  backgroundColor: Theme.of(context)
-                                      .disabledColor
-                                      .withOpacity(0.3),
-                                  minimumSize: const Size(1170, 40),
-                                  padding: EdgeInsets.zero,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                        Dimensions.radiusSmall),
-                                  ),
-                                ),
-                                child: Text(
-                                  'cancel'.tr,
-                                  textAlign: TextAlign.center,
-                                  style: robotoBold.copyWith(
-                                      color: Theme.of(context)
-                                          .textTheme
-                                          .bodyLarge!
-                                          .color),
-                                ),
-                              ),
-                            ),
+                            // const SizedBox(
+                            //     width: Dimensions.paddingSizeLarge),
+                            // // Expanded(
+                            // //   child: TextButton(
+                            // //     onPressed: () => Get.back(),
+                            // //     style: TextButton.styleFrom(
+                            // //       backgroundColor: Theme.of(context)
+                            // //           .disabledColor
+                            // //           .withOpacity(0.3),
+                            // //       minimumSize: const Size(1170, 40),
+                            // //       padding: EdgeInsets.zero,
+                            // //       shape: RoundedRectangleBorder(
+                            // //         borderRadius: BorderRadius.circular(
+                            // //             Dimensions.radiusSmall),
+                            // //       ),
+                            // //     ),
+                            // //     child: Text(
+                            // //       'cancel'.tr,
+                            // //       textAlign: TextAlign.center,
+                            // //       style: robotoBold.copyWith(
+                            // //           color: Theme.of(context)
+                            // //               .textTheme
+                            // //               .bodyLarge!
+                            // //               .color),
+                            // //     ),
+                            // //   ),
+                            // // ),
+                        
                           ],
                         );
                 }),
