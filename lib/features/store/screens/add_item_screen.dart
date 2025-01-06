@@ -304,7 +304,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                 physics: const BouncingScrollPhysics(),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-                  Text('item_info'.tr, style: robotoMedium),
+                  Text('item_info'.tr, style: PoppinsMedium),
                   const SizedBox(height: Dimensions.paddingSizeSmall),
 
                   Container(
@@ -325,8 +325,8 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                           indicatorWeight: 3,
                           labelColor: Theme.of(context).primaryColor,
                           unselectedLabelColor: Theme.of(context).disabledColor,
-                          unselectedLabelStyle: robotoRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall),
-                          labelStyle: robotoBold.copyWith(fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).primaryColor),
+                          unselectedLabelStyle: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall),
+                          labelStyle: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).primaryColor),
                           labelPadding: const EdgeInsets.only(right: Dimensions.radiusDefault),
                           isScrollable: true,
                           indicatorSize: TabBarIndicatorSize.tab,
@@ -342,7 +342,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                         child: Divider(height: 0),
                       ),
 
-                      Text('insert_language_wise_item_name_and_description'.tr, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor)),
+                      Text('insert_language_wise_item_name_and_description'.tr, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor)),
                       const SizedBox(height: Dimensions.paddingSizeDefault),
 
                       CustomTextFieldWidget(
@@ -372,7 +372,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                   ),
                   const SizedBox(height: Dimensions.paddingSizeDefault),
 
-                  Text('item_setup'.tr, style: robotoBold),
+                  Text('item_setup'.tr, style: PoppinsBold),
                   const SizedBox(height: Dimensions.paddingSizeSmall),
 
                   Container(
@@ -414,7 +414,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                             padding: const EdgeInsets.only(left: 8),
                             child: Text(
                               widget.item != null && categoryController.categoryIndex != null ? categoryController.categoryList![categoryController.categoryIndex!].name! : 'category'.tr,
-                              style: robotoRegular.copyWith(color: Theme.of(context).disabledColor),
+                              style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor),
                             ),
                           ),
                         ),
@@ -450,7 +450,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                             padding: const EdgeInsets.only(left: 8),
                             child: Text(
                               widget.item != null && categoryController.subCategoryIndex != null ? categoryController.subCategoryList![categoryController.subCategoryIndex!].name! : 'sub_category'.tr,
-                              style: robotoRegular.copyWith(color: Theme.of(context).disabledColor),
+                              style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor),
                             ),
                           ),
                         ),
@@ -486,7 +486,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                             padding: const EdgeInsets.only(left: 8),
                             child: Text(
                               widget.item != null && storeController.suitableTagIndex != null ? storeController.suitableTagList![storeController.suitableTagIndex!].name! : 'suitable_for'.tr,
-                              style: robotoRegular.copyWith(color: Theme.of(context).disabledColor),
+                              style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor),
                             ),
                           ),
                         ),
@@ -522,7 +522,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                             padding: const EdgeInsets.only(left: 8),
                             child: Text(
                               widget.item != null && storeController.brandIndex != null ? storeController.brandList![storeController.brandIndex!].name! : 'brand'.tr,
-                              style: robotoRegular.copyWith(color: Theme.of(context).disabledColor),
+                              style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor),
                             ),
                           ),
                         ),
@@ -593,8 +593,8 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                                     decoration: InputDecoration(
                                       hintText: 'generic_name'.tr,
                                       labelText: 'generic_name'.tr,
-                                      hintStyle: robotoRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.8)),
-                                      labelStyle: robotoRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.8)),
+                                      hintStyle: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.8)),
+                                      labelStyle: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.8)),
                                       enabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
                                         borderSide: BorderSide(color: Theme.of(context).disabledColor, width: 0.3),
@@ -691,8 +691,8 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                                     decoration: InputDecoration(
                                       hintText: 'type_and_click_add_button'.tr,
                                       labelText: 'nutrition'.tr,
-                                      labelStyle: robotoRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.8)),
-                                      hintStyle: robotoRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.8)),
+                                      labelStyle: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.8)),
+                                      hintStyle: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.8)),
                                       enabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
                                         borderSide: BorderSide(color: Theme.of(context).disabledColor, width: 0.3),
@@ -755,7 +755,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
 
                                   Text(
                                     storeController.selectedNutritionList![index]!,
-                                    style: robotoRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.7)),
+                                    style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.7)),
                                   ),
 
                                   InkWell(
@@ -840,8 +840,8 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                                     decoration: InputDecoration(
                                       hintText: 'type_and_click_add_button'.tr,
                                       labelText: 'allergic_ingredients'.tr,
-                                      hintStyle: robotoRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.8)),
-                                      labelStyle: robotoRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.8)),
+                                      hintStyle: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.8)),
+                                      labelStyle: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.8)),
                                       enabledBorder: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
                                         borderSide: BorderSide(color: Theme.of(context).disabledColor, width: 0.3),
@@ -904,7 +904,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
 
                                   Text(
                                     storeController.selectedAllergicIngredientsList![index]!,
-                                    style: robotoRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.7)),
+                                    style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.7)),
                                   ),
 
                                   InkWell(
@@ -925,12 +925,12 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
 
                       (_module.vegNonVeg! && Get.find<SplashController>().configModel!.toggleVegNonVeg!) ? Align(
                         alignment: Alignment.centerLeft,
-                        child: Text('item_type'.tr, style: robotoMedium),
+                        child: Text('item_type'.tr, style: PoppinsMedium),
                       ) : const SizedBox(),
 
                       (_module.vegNonVeg! && Get.find<SplashController>().configModel!.toggleVegNonVeg!) ? Row(children: [
                         Expanded(child: RadioListTile<String>(
-                          title: Text('non_veg'.tr, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+                          title: Text('non_veg'.tr, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
                           groupValue: storeController.isVeg ? 'veg' : 'non_veg',
                           value: 'non_veg',
                           contentPadding: EdgeInsets.zero,
@@ -940,7 +940,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                         const SizedBox(width: Dimensions.paddingSizeSmall),
 
                         Expanded(child: RadioListTile<String>(
-                          title: Text('veg'.tr, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+                          title: Text('veg'.tr, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
                           groupValue: storeController.isVeg ? 'veg' : 'non_veg',
                           value: 'veg',
                           contentPadding: EdgeInsets.zero,
@@ -958,7 +958,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                           value: storeController.isHalal,
                           onChanged: (bool? isChecked) => storeController.toggleHalal(),
                         ),
-                        title: Text('is_it_halal'.tr, style: robotoMedium),
+                        title: Text('is_it_halal'.tr, style: PoppinsMedium),
                         contentPadding: EdgeInsets.zero,
                         dense: true,
                         horizontalTitleGap: 0,
@@ -971,7 +971,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                           value: storeController.isBasicMedicine,
                           onChanged: (bool? isChecked) => storeController.toggleBasicMedicine(),
                         ),
-                        title: Text('is_basic_medicine'.tr, style: robotoMedium),
+                        title: Text('is_basic_medicine'.tr, style: PoppinsMedium),
                         contentPadding: EdgeInsets.zero,
                         dense: true,
                         horizontalTitleGap: 0,
@@ -982,7 +982,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                   const SizedBox(height: Dimensions.paddingSizeDefault),
 
                   isPharmacy ? Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Text('prescription_required'.tr, style: robotoBold),
+                    Text('prescription_required'.tr, style: PoppinsBold),
                     const SizedBox(height: Dimensions.paddingSizeSmall),
 
                     Container(
@@ -998,7 +998,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                           value: storeController.isPrescriptionRequired,
                           onChanged: (bool? isChecked) => storeController.togglePrescriptionRequired(),
                         ),
-                        title: Text('this_item_need_prescription_to_place_order'.tr, style: robotoMedium),
+                        title: Text('this_item_need_prescription_to_place_order'.tr, style: PoppinsMedium),
                         contentPadding: EdgeInsets.zero,
                         dense: true,
                         horizontalTitleGap: 0,
@@ -1007,7 +1007,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                   ]) : const SizedBox(),
                   SizedBox(height: isPharmacy ? Dimensions.paddingSizeDefault : 0),
 
-                  Text('price_info'.tr, style: robotoBold),
+                  Text('price_info'.tr, style: PoppinsBold),
                   const SizedBox(height: Dimensions.paddingSizeSmall),
 
                   Container(
@@ -1062,7 +1062,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                                   padding: const EdgeInsets.only(left: 8),
                                   child: Text(
                                     widget.item != null ? storeController.discountTypeList[storeController.discountTypeIndex]!.tr : 'discount_type'.tr,
-                                    style: robotoRegular.copyWith(color: Theme.of(context).disabledColor),
+                                    style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor),
                                   ),
                                 ),
                               ),
@@ -1131,7 +1131,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                                   padding: const EdgeInsets.only(left: 8),
                                   child: Text(
                                     widget.item != null && storeController.unitList != null ? storeController.unitList![storeController.unitIndex!].unit!.tr : 'unit'.tr,
-                                    style: robotoRegular.copyWith(color: Theme.of(context).disabledColor),
+                                    style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor),
                                   ),
                                 ),
                               ),
@@ -1149,7 +1149,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                     storeController: storeController, item: widget.item,
                   ) : AttributeViewWidget(storeController: storeController, product: widget.item),
 
-                  _module.addOn! ? Text('addons'.tr, style: robotoBold) : const SizedBox(),
+                  _module.addOn! ? Text('addons'.tr, style: PoppinsBold) : const SizedBox(),
                   SizedBox(height: _module.addOn! ? Dimensions.paddingSizeSmall : 0),
 
                   _module.addOn! ? Container(
@@ -1221,7 +1221,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                                   GetBuilder<AddonController>(builder: (addonController) {
                                     return Text(
                                       addonController.addonList![storeController.selectedAddons![index]].name!,
-                                      style: robotoRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.7)),
+                                      style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.7)),
                                     );
                                   }),
                                   InkWell(
@@ -1241,7 +1241,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                   ) : const SizedBox(),
                   SizedBox(height: _module.addOn! ? Dimensions.paddingSizeDefault : 0),
 
-                  Text('tag'.tr, style: robotoBold),
+                  Text('tag'.tr, style: PoppinsBold),
                   const SizedBox(height: Dimensions.paddingSizeSmall),
 
                   Container(
@@ -1295,7 +1295,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                               padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
                               decoration: BoxDecoration(color: Theme.of(context).disabledColor.withOpacity(0.2), borderRadius: BorderRadius.circular(Dimensions.radiusSmall)),
                               child: Center(child: Row(children: [
-                                Text(storeController.tagList[index]!, style: robotoRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.7))),
+                                Text(storeController.tagList[index]!, style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.7))),
                                 const SizedBox(width: Dimensions.paddingSizeExtraSmall),
 
                                 InkWell(onTap: () => storeController.removeTag(index), child: Icon(Icons.clear, size: 18, color: Theme.of(context).disabledColor.withOpacity(0.7))),
@@ -1307,7 +1307,7 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                   ),
                   const SizedBox(height: Dimensions.paddingSizeDefault),
 
-                  _module.itemAvailableTime! ? Text('availability'.tr, style: robotoBold) : const SizedBox(),
+                  _module.itemAvailableTime! ? Text('availability'.tr, style: PoppinsBold) : const SizedBox(),
                   SizedBox(height: _module.itemAvailableTime! ? Dimensions.paddingSizeSmall : 0),
 
                   _module.itemAvailableTime! ? Container(
@@ -1335,12 +1335,12 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                   SizedBox(height: _module.itemAvailableTime! ? Dimensions.paddingSizeDefault : 0),
 
                   Row(children: [
-                    Text('thumbnail_image'.tr, style: robotoBold),
+                    Text('thumbnail_image'.tr, style: PoppinsBold),
                     const SizedBox(width: Dimensions.paddingSizeExtraSmall),
 
                     Text(
                       '(${'max_size_2_mb'.tr})',
-                      style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).colorScheme.error),
+                      style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).colorScheme.error),
                     ),
                   ]),
                   const SizedBox(height: Dimensions.paddingSizeExtraSmall),
@@ -1394,12 +1394,12 @@ class _AddItemScreenState extends State<AddItemScreen> with TickerProviderStateM
                   const SizedBox(height: Dimensions.paddingSizeDefault),
 
                   Row(children: [
-                    Text('item_images'.tr, style: robotoBold),
+                    Text('item_images'.tr, style: PoppinsBold),
                     const SizedBox(width: Dimensions.paddingSizeSmall),
 
                     Text(
                       '(${'max_size_2_mb'.tr})',
-                      style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).colorScheme.error),
+                      style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).colorScheme.error),
                     ),
                   ]),
                   const SizedBox(height: Dimensions.paddingSizeSmall),

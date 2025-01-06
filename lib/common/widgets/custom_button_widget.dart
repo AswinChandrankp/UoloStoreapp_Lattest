@@ -47,12 +47,12 @@ class CustomButtonWidget extends StatelessWidget {
           ),
           const SizedBox(width: Dimensions.paddingSizeSmall),
 
-          Text('loading'.tr, style: robotoMedium.copyWith(color: Colors.white)),
+          Text('loading'.tr, style: PoppinsMedium.copyWith(color: Colors.white)),
         ]),
         ) : Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           icon != null ? Icon(icon, color: transparent ? Theme.of(context).primaryColor : iconColor ?? Theme.of(context).cardColor) : const SizedBox(),
           SizedBox(width: icon != null ? Dimensions.paddingSizeSmall : 0),
-          Text(buttonText, textAlign: TextAlign.center, style: robotoBold.copyWith(
+          Text(buttonText, textAlign: TextAlign.center, style: PoppinsBold.copyWith(
             color: textColor ?? (transparent || isViewReply ? Theme.of(context).primaryColor : Theme.of(context).cardColor),
             fontSize: fontSize ?? Dimensions.fontSizeLarge, fontWeight: fontWeight,
           )),

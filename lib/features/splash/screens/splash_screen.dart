@@ -51,13 +51,19 @@ class SplashScreenState extends State<SplashScreen> {
     });
 
 
- WidgetsBinding.instance.addPostFrameCallback((_) async {
+if(Get.find<AuthController>().isLoggedIn()){
+   WidgetsBinding.instance.addPostFrameCallback((_) async {
 
      
      
       await    Get.find<OrderController>().getCurrentOrders();
 
     });
+
+}
+
+  
+
     Get.find<SplashController>().initSharedData();
     _route();
 
@@ -146,7 +152,7 @@ class SplashScreenState extends State<SplashScreen> {
           child: Column(mainAxisSize: MainAxisSize.min, children: [
             Image.asset(Images.logo, width: 200),
             const SizedBox(height: Dimensions.paddingSizeSmall),
-            Text('suffix_name'.tr, style: robotoMedium, textAlign: TextAlign.center),
+            Text('suffix_name'.tr, style: PoppinsMedium, textAlign: TextAlign.center),
           ]),
         ),
       ),

@@ -30,7 +30,7 @@ class SwitchButtonWidget extends StatelessWidget {
           Icon(icon, size: 25),
           const SizedBox(width: Dimensions.paddingSizeSmall),
 
-          Expanded(child: Text(title, style: robotoRegular)),
+          Expanded(child: Text(title, style: PoppinsRegular)),
 
           isButtonActive != null ? Transform.scale(
            scale: 0.7,

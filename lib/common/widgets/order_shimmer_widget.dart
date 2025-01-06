@@ -8,29 +8,33 @@ class OrderShimmerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Shimmer(
-      duration: const Duration(seconds: 2),
-      enabled: isEnabled,
-      child: Column(children: [
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Shimmer(
+        duration: const Duration(seconds: 2),
 
-        Padding(
-          padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
-          child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-
-            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Container(height: 15, width: 100, color: Colors.grey[300]),
-              const SizedBox(height: Dimensions.paddingSizeExtraSmall),
-              Container(height: 10, width: 150, color: Colors.grey[300]),
+        enabled: isEnabled,
+        child: Column(children: [
+      
+          Padding(
+            padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
+            child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+      
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Container(height: 15, width: 100, color: Colors.grey[300]),
+                const SizedBox(height: Dimensions.paddingSizeExtraSmall),
+                Container(height: 10, width: 150, color: Colors.grey[300]),
+              ]),
+      
+              Icon(Icons.keyboard_arrow_right, size: 30, color: Theme.of(context).disabledColor),
+      
             ]),
-
-            Icon(Icons.keyboard_arrow_right, size: 30, color: Theme.of(context).disabledColor),
-
-          ]),
-        ),
-
-        Divider(color: Theme.of(context).disabledColor),
-
-      ]),
+          ),
+      
+          Divider(color: Theme.of(context).disabledColor),
+      
+        ]),
+      ),
     );
   }
 }

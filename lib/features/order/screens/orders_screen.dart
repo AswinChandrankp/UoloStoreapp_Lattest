@@ -44,16 +44,34 @@ class _OrderScreenState extends State<OrderScreen> {
   @override
   void initState() {
     super.initState();
-    startTimer(); 
+
+     if (Get.find<OrderController>().runningOrderList != null) {
+         print('--------------------------------------------------------orders--Empty----Fetching orders...-----------------------------------------------');
+        Get.find<OrderController>().getCurrentOrders() ;
+        
+      } else {
+        print('--------------------------------------------------------orders--Exists...-----------------------------------------------');
+      }
+
+       Future.delayed(Duration(seconds: 120), () {
+          //  startTimer(); 
+       });
+  
+
   }
 
   void startTimer() {
-    _timer = Timer.periodic(Duration(seconds: 5), (timer) {
-  
-      print('------------------------------------------------------------Fetching orders...-----------------------------------------------');
+    _timer = Timer.periodic(Duration(seconds: 5
+    ), (timer) {
+     
+
+     print('--------------------------------------------------------fetching orders in each ${ timer.tick } seconds...-----------------------------------------------');
+ Get.find<OrderController>().getCurrentOrders() ;
+//  Get.find<OrderController>().getPaginatedOrders(1, true);
     
-    
-      Get.find<OrderController>().getCurrentOrders();
+     
+     
+   
     });
   }
 
@@ -68,9 +86,10 @@ class _OrderScreenState extends State<OrderScreen> {
     Get.find<OrderController>().getPaginatedOrders(1, true);
 
     return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor ,
       appBar:
        AppBar(
-        backgroundColor: Theme.of(context).cardColor,
+        backgroundColor: Theme.of(context).primaryColor,
         // leading: Padding(
         //   padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
         //   child: Text("Uolo"),
@@ -81,15 +100,15 @@ class _OrderScreenState extends State<OrderScreen> {
         elevation: 0,
         title: Padding(
       padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
-          child: Text("Uolo", style: robotoRegular.copyWith(color:  Theme.of(context).primaryColor, fontSize: 30,fontWeight: FontWeight.w900)),
+          child: Text("Uolo", style: PoppinsRegular.copyWith(color:  Theme.of(context).cardColor, fontSize: 30,fontWeight: FontWeight.w900)),
         ),
         actions: [IconButton(
           icon: GetBuilder<NotificationController>(builder: (notificationController) {
             return Stack(children: [
-              Icon(Icons.notifications, size: 25, color: Theme.of(context).textTheme.bodyLarge!.color),
+              Icon(Icons.notifications, size: 25, color: Theme.of(context).cardColor),
               notificationController.hasNotification ? Positioned(top: 0, right: 0, child: Container(
                 height: 10, width: 10, decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor, shape: BoxShape.circle,
+                color: Theme.of(context).cardColor, shape: BoxShape.circle,
                 border: Border.all(width: 1, color: Theme.of(context).cardColor),
               ),
               )) : const SizedBox(),
@@ -100,7 +119,7 @@ class _OrderScreenState extends State<OrderScreen> {
         IconButton(
           icon: GetBuilder<NotificationController>(builder: (notificationController) {
             return Stack(children: [
-              Icon(Icons.menu, size: 25, color: Theme.of(context).primaryColor),
+              Icon(Icons.menu, size: 25, color: Theme.of(context).cardColor),
               // notificationController.hasNotification ? Positioned(top: 0, right: 0, child: Container(
               //   height: 10, width: 10, decoration: BoxDecoration(
               //   color: Colors.redAccent, shape: BoxShape.circle,
@@ -209,7 +228,7 @@ class _OrderScreenState extends State<OrderScreen> {
                   
                         // //       Text(
                         //         'campaign_order'.tr,
-                        //         style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                        //         style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                         //       ),
                         //     ]),
                         //   ),
@@ -236,7 +255,7 @@ class _OrderScreenState extends State<OrderScreen> {
                   
                       ]) : Center(child: Padding(
                         padding: const EdgeInsets.only(top: 100),
-                        child: Text('you_have_no_permission_to_access_this_feature'.tr, style: robotoMedium),
+                        child: Text('you_have_no_permission_to_access_this_feature'.tr, style: PoppinsMedium),
                       )) : ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
@@ -253,7 +272,7 @@ class _OrderScreenState extends State<OrderScreen> {
              
             ]),
           ),
-        ) : Center(child: Text('you_have_no_permission_to_access_this_feature'.tr, style: robotoMedium));
+        ) : Center(child: Text('you_have_no_permission_to_access_this_feature'.tr, style: PoppinsMedium));
       }),
     );
   }

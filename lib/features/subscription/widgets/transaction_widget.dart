@@ -73,7 +73,7 @@ class _TransactionWidgetState extends State<TransactionWidget> {
                 controller: _searchController,
                 decoration: InputDecoration(
                   hintText: '${'search'.tr}...',
-                  hintStyle: robotoRegular.copyWith(color: Theme.of(context).disabledColor),
+                  hintStyle: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor),
                   contentPadding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall, vertical: Dimensions.paddingSizeExtraSmall),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(width: 1, color: Theme.of(context).disabledColor.withOpacity(0.4)),
@@ -127,7 +127,7 @@ class _TransactionWidgetState extends State<TransactionWidget> {
         ),
 
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text('from'.tr, style: robotoMedium.copyWith(color: Theme.of(context).disabledColor)),
+          Text('from'.tr, style: PoppinsMedium.copyWith(color: Theme.of(context).disabledColor)),
           const SizedBox(width: Dimensions.fontSizeExtraSmall),
 
           Container(
@@ -136,11 +136,11 @@ class _TransactionWidgetState extends State<TransactionWidget> {
               borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
               color: Theme.of(context).primaryColor.withOpacity(0.05),
             ),
-            child: Text(DateConverterHelper.convertDateToDate(subscriptionController.from!), style: robotoMedium),
+            child: Text(DateConverterHelper.convertDateToDate(subscriptionController.from!), style: PoppinsMedium),
           ),
           const SizedBox(width: 5),
 
-          Text('to'.tr, style: robotoMedium.copyWith(color: Theme.of(context).disabledColor)),
+          Text('to'.tr, style: PoppinsMedium.copyWith(color: Theme.of(context).disabledColor)),
           const SizedBox(width: 5),
 
           Container(
@@ -149,7 +149,7 @@ class _TransactionWidgetState extends State<TransactionWidget> {
               borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
               color: Theme.of(context).primaryColor.withOpacity(0.05),
             ),
-            child: Text(DateConverterHelper.convertDateToDate(subscriptionController.to!), style: robotoMedium),
+            child: Text(DateConverterHelper.convertDateToDate(subscriptionController.to!), style: PoppinsMedium),
           ),
 
         ]),
@@ -193,8 +193,8 @@ class _TransactionWidgetState extends State<TransactionWidget> {
                           child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
 
                             Row(children: [
-                              Text('${'transaction_id'.tr} # ', style: robotoRegular),
-                              Text(transactions.id!, style: robotoBold),
+                              Text('${'transaction_id'.tr} # ', style: PoppinsRegular),
+                              Text(transactions.id!, style: PoppinsBold),
                             ]),
 
                             Container(
@@ -205,7 +205,7 @@ class _TransactionWidgetState extends State<TransactionWidget> {
                               ),
                               child: Text(
                                 transactions.planType == 'renew' ? 'renewed'.tr : transactions.planType == 'new_plan' ? 'migrated'.tr : transactions.planType == 'free_trial' ? 'free_trial'.tr : 'purchased'.tr,
-                                style: robotoMedium.copyWith(
+                                style: PoppinsMedium.copyWith(
                                   fontSize: Dimensions.fontSizeSmall,
                                   color: transactions.planType == 'renew' ? Theme.of(context).primaryColor : transactions.planType == 'new_plan' ? Colors.blue : Colors.deepOrange.withOpacity(0.9),
                                 ),
@@ -218,10 +218,10 @@ class _TransactionWidgetState extends State<TransactionWidget> {
                         Padding(padding: const EdgeInsets.all(Dimensions.paddingSizeDefault),
                           child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
 
-                            Text(DateConverterHelper.utcToDateTime(transactions.createdAt!), style: robotoRegular.copyWith(color: Theme.of(context).disabledColor)),
+                            Text(DateConverterHelper.utcToDateTime(transactions.createdAt!), style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor)),
                             const SizedBox(width: Dimensions.paddingSizeDefault),
 
-                            Flexible(child: Text(transactions.package?.packageName ?? '', style: robotoRegular.copyWith(color: Theme.of(context).disabledColor), overflow: TextOverflow.ellipsis, maxLines: 1)),
+                            Flexible(child: Text(transactions.package?.packageName ?? '', style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor), overflow: TextOverflow.ellipsis, maxLines: 1)),
 
                           ]),
                         ),
@@ -229,16 +229,16 @@ class _TransactionWidgetState extends State<TransactionWidget> {
                         Padding(padding: const EdgeInsets.only(left: Dimensions.paddingSizeDefault, right: Dimensions.paddingSizeDefault, bottom: Dimensions.paddingSizeDefault),
                           child: Row(children: [
 
-                            Text('${'paid_by'.tr} - ', style: robotoRegular),
+                            Text('${'paid_by'.tr} - ', style: PoppinsRegular),
                             SizedBox(
                               width: context.width * 0.5,
-                              child: Text(transactions.paymentMethod?.replaceAll('_', ' ').toTitleCase() ?? '', style: robotoMedium.copyWith(color: Colors.blue)),
+                              child: Text(transactions.paymentMethod?.replaceAll('_', ' ').toTitleCase() ?? '', style: PoppinsMedium.copyWith(color: Colors.blue)),
                             ),
 
                             const Spacer(),
 
 
-                            Text(PriceConverterHelper.convertPrice(transactions.paidAmount), style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge)),
+                            Text(PriceConverterHelper.convertPrice(transactions.paidAmount), style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeLarge)),
 
                           ]),
                         ),
@@ -252,7 +252,7 @@ class _TransactionWidgetState extends State<TransactionWidget> {
               physics: const AlwaysScrollableScrollPhysics(),
               child: SizedBox(
                 height: context.height * 0.6,
-                child: Center(child: Text('no_transaction_found'.tr, style: robotoMedium)),
+                child: Center(child: Text('no_transaction_found'.tr, style: PoppinsMedium)),
               ),
             ) : SizedBox(
               height: context.height * 0.6,

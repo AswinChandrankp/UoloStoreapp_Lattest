@@ -60,10 +60,10 @@ class VerificationScreenState extends State<VerificationScreen> {
           return Column(children: [
 
             Get.find<SplashController>().configModel!.demo! ? Text(
-              'for_demo_purpose'.tr, style: robotoRegular,
+              'for_demo_purpose'.tr, style: PoppinsRegular,
             ) : RichText(text: TextSpan(children: [
-              TextSpan(text: 'enter_the_verification_sent_to'.tr, style: robotoRegular.copyWith(color: Theme.of(context).disabledColor)),
-              TextSpan(text: ' ${widget.email}', style: robotoMedium.copyWith(color: Theme.of(context).textTheme.bodyLarge!.color)),
+              TextSpan(text: 'enter_the_verification_sent_to'.tr, style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor)),
+              TextSpan(text: ' ${widget.email}', style: PoppinsMedium.copyWith(color: Theme.of(context).textTheme.bodyLarge!.color)),
             ])),
 
             Padding(
@@ -97,7 +97,7 @@ class VerificationScreenState extends State<VerificationScreen> {
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(
                 'did_not_receive_the_code'.tr,
-                style: robotoRegular.copyWith(color: Theme.of(context).disabledColor),
+                style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor),
               ),
               TextButton(
                 onPressed: _seconds < 1 ? () {

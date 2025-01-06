@@ -16,13 +16,13 @@ class BankFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-      Text(hintText, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor)),
+      Text(hintText, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor)),
       const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
       TextField(
         controller: controller,
         focusNode: focusNode,
-        style: robotoRegular,
+        style: PoppinsRegular,
         textInputAction: inputAction,
         cursorColor: Theme.of(context).primaryColor,
         textCapitalization: capitalization,
@@ -33,7 +33,7 @@ class BankFieldWidget extends StatelessWidget {
           filled: true,
           fillColor: Theme.of(context).disabledColor.withOpacity(0.2),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(Dimensions.radiusSmall), borderSide: BorderSide.none),
-          hintStyle: robotoRegular.copyWith(color: Theme.of(context).hintColor),
+          hintStyle: PoppinsRegular.copyWith(color: Theme.of(context).hintColor),
         ),
       ),
       const SizedBox(height: Dimensions.paddingSizeDefault),

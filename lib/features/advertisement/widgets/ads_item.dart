@@ -25,7 +25,7 @@ class AdsCard extends StatelessWidget {
             children: [
               Flexible(
                 child: Text(title.tr,
-                  style: robotoRegular.copyWith(
+                  style: PoppinsRegular.copyWith(
                     fontSize: Dimensions.fontSizeSmall + 1,
                     color:Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.65),
                   ),
@@ -33,7 +33,7 @@ class AdsCard extends StatelessWidget {
                 ),
               ),
               Text(subTitle,
-                style: subtitleTextStyle ?? robotoRegular.copyWith(
+                style: subtitleTextStyle ?? PoppinsRegular.copyWith(
                   fontSize: Dimensions.fontSizeSmall + 1,
                   color: Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.65),
                 ),

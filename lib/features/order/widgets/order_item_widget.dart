@@ -92,13 +92,13 @@ class OrderItemWidget extends StatelessWidget {
               Expanded(child: Text(
                 " ${ orderDetails.quantity}  X ${orderDetails.itemDetails!.name!}",
                 
-                style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
+                style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
                 maxLines: 2, overflow: TextOverflow.ellipsis,
               )),
-              // Text('${'quantity'.tr}:', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+              // Text('${'quantity'.tr}:', style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
               // Text(
               //   orderDetails.quantity.toString(),
-              //   style: robotoMedium.copyWith(color: Theme.of(context).primaryColor, fontSize: Dimensions.fontSizeSmall),
+              //   style: PoppinsMedium.copyWith(color: Theme.of(context).primaryColor, fontSize: Dimensions.fontSizeSmall),
               // ),
             ]),
 
@@ -109,10 +109,10 @@ class OrderItemWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [ 
           // const SizedBox(width: 60),
-          Text('${'variations'.tr}: ', style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall,color: Theme.of(context).disabledColor )),
+          Text('${'variations'.tr}: ', style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall,color: Theme.of(context).disabledColor )),
           Flexible(child: Text(
               variationText,
-              style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor,
+              style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor,
           ))),
         ]),
       ) : const SizedBox(),
@@ -121,7 +121,7 @@ class OrderItemWidget extends StatelessWidget {
             Row(children: [
               Expanded(child: Text(
                 PriceConverterHelper.convertPrice(orderDetails.price),
-                style: robotoMedium,
+                style: PoppinsMedium,
               )),
               // ((Get.find<SplashController>().configModel!.moduleConfig!.module!.unit! && orderDetails.itemDetails!.unitType != null)
               // || (Get.find<SplashController>().configModel!.moduleConfig!.module!.vegNonVeg! && Get.find<SplashController>().configModel!.toggleVegNonVeg!)) ? Container(
@@ -133,7 +133,7 @@ class OrderItemWidget extends StatelessWidget {
               //   child: Text(
               //     Get.find<SplashController>().configModel!.moduleConfig!.module!.unit! ? orderDetails.itemDetails!.unitType ?? ''
               //         : orderDetails.itemDetails!.veg == 0 ? 'non_veg'.tr : 'veg'.tr,
-              //     style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).primaryColor),
+              //     style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).primaryColor),
               //   ),
               // ) : const SizedBox(),
             ]),
@@ -146,10 +146,10 @@ class OrderItemWidget extends StatelessWidget {
         padding: const EdgeInsets.only(top: Dimensions.paddingSizeExtraSmall),
         child: Row(children: [
           const SizedBox(width: 70),
-          Text('${'addons'.tr}: ', style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall)),
+          Text('${'addons'.tr}: ', style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall)),
           Flexible(child: Text(
               addOnText,
-              style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor,
+              style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor,
           ))),
         ]),
       ) : const SizedBox(),
@@ -158,10 +158,10 @@ class OrderItemWidget extends StatelessWidget {
       //   padding: const EdgeInsets.only(top: Dimensions.paddingSizeExtraSmall),
       //   child: Row(children: [
       //     const SizedBox(width: 60),
-      //     Text('${'variations'.tr}: ', style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall)),
+      //     Text('${'variations'.tr}: ', style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall)),
       //     Flexible(child: Text(
       //         variationText,
-      //         style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor,
+      //         style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor,
       //     ))),
       //   ]),
       // ) : const SizedBox(),

@@ -135,13 +135,13 @@ class _StoreSettingsScreenState extends State<StoreSettingsScreen> {
 
                   Text(
                     'logo'.tr,
-                    style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                    style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                   ),
                   const SizedBox(width: Dimensions.paddingSizeExtraSmall),
 
                   Text(
                     '(${'max_size_2_mb'.tr})',
-                    style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).colorScheme.error),
+                    style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).colorScheme.error),
                   ),
 
                 ]),
@@ -288,7 +288,7 @@ class _StoreSettingsScreenState extends State<StoreSettingsScreen> {
 
                 Align(alignment: Alignment.centerLeft, child: Text(
                   'approximate_delivery_time'.tr,
-                  style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                  style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                 )),
                 const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
@@ -342,7 +342,7 @@ class _StoreSettingsScreenState extends State<StoreSettingsScreen> {
                     Row(children: [
                       Text(
                         'minimum_stock_for_warning'.tr,
-                        style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                        style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                       ),
                       const SizedBox(width: Dimensions.paddingSizeExtraSmall),
 
@@ -406,7 +406,7 @@ class _StoreSettingsScreenState extends State<StoreSettingsScreen> {
 
                 (_module.vegNonVeg! && Get.find<SplashController>().configModel!.toggleVegNonVeg!) ? Align(alignment: Alignment.centerLeft, child: Text(
                   'item_type'.tr,
-                  style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                  style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                 )) : const SizedBox(),
                 (_module.vegNonVeg! && Get.find<SplashController>().configModel!.toggleVegNonVeg!) ? Row(children: [
 
@@ -448,7 +448,7 @@ class _StoreSettingsScreenState extends State<StoreSettingsScreen> {
 
                   Expanded(child: Text(
                     'gst'.tr,
-                    style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                    style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                   )),
 
                   Transform.scale(
@@ -476,7 +476,7 @@ class _StoreSettingsScreenState extends State<StoreSettingsScreen> {
 
                   Expanded(child: Text(
                     'extra_packaging_charge'.tr,
-                    style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                    style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                   )),
 
                   Transform.scale(
@@ -504,7 +504,7 @@ class _StoreSettingsScreenState extends State<StoreSettingsScreen> {
 
                 _module.alwaysOpen! ? const SizedBox() : Align(alignment: Alignment.centerLeft, child: Text(
                   'daily_schedule_time'.tr,
-                  style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                  style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                 )),
                 SizedBox(height: _module.alwaysOpen! ? 0 : Dimensions.paddingSizeExtraSmall),
                 _module.alwaysOpen! ? const SizedBox() : ListView.builder(

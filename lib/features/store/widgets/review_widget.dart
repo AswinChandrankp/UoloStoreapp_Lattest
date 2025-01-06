@@ -27,19 +27,19 @@ class ReviewWidget extends StatelessWidget {
 
           Text(
             fromStore ? review.itemName! : review.customer != null ?'${ review.customer!.fName} ${ review.customer!.lName}' : 'customer_not_found'.tr,
-            maxLines: 1, overflow: TextOverflow.ellipsis, style: robotoMedium,
+            maxLines: 1, overflow: TextOverflow.ellipsis, style: PoppinsMedium,
           ),
           const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
           RatingBarWidget(rating: review.rating!.toDouble(), ratingCount: null),
           const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
-          Text(DateConverterHelper.convertDateToDate(review.createdAt!), style: robotoRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall)),
+          Text(DateConverterHelper.convertDateToDate(review.createdAt!), style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall)),
           const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
           Text(
             review.comment ?? '', maxLines: 2, overflow: TextOverflow.ellipsis,
-            style: robotoRegular.copyWith(color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7), fontSize: Dimensions.fontSizeSmall),
+            style: PoppinsRegular.copyWith(color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7), fontSize: Dimensions.fontSizeSmall),
           ),
 
         ]),

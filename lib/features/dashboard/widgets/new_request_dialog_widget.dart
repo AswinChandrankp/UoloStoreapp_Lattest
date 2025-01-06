@@ -56,7 +56,7 @@ class _NewRequestDialogWidgetState extends State<NewRequestDialogWidget> {
             padding: const EdgeInsets.all(Dimensions.paddingSizeLarge),
             child: Text(
               'new_order_placed'.tr, textAlign: TextAlign.center,
-              style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeLarge),
+              style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeLarge),
             ),
           ),
 

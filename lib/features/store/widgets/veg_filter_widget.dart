@@ -53,8 +53,8 @@ import 'package:get/get.dart';
 //               child: Text(
 //                 Get.find<StoreController>().itemTypeList[index].tr,
 //                 style: Get.find<StoreController>().itemTypeList[index] == type
-//                     ? robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).cardColor)
-//                     : robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).hintColor),
+//                     ? PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).cardColor)
+//                     : PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).hintColor),
 //               ),
 //             ),
 //           );
@@ -93,7 +93,7 @@ class VegFilterWidget extends StatelessWidget {
                     value: item,
                     child: Text(
                       item.tr,
-                      style: robotoRegular.copyWith(
+                      style: PoppinsRegular.copyWith(
                         fontSize: Dimensions.fontSizeSmall,
                         color: item == type
                             ? Theme.of(context).primaryColor
@@ -119,7 +119,7 @@ class VegFilterWidget extends StatelessWidget {
                     children: [
                       Text(
                         type ?? "Select Filter",
-                        style: robotoMedium.copyWith(
+                        style: PoppinsMedium.copyWith(
                           fontSize: Dimensions.fontSizeSmall,
                           color: Theme.of(context).primaryColor,
                         ),

@@ -34,10 +34,11 @@ Future<void> main() async {
   if(GetPlatform.isAndroid) {
     await Firebase.initializeApp(
       options: const FirebaseOptions(
-         apiKey: "AIzaSyBsKYkb4r9kQjiWIHMcHX8XQ9RGtpiUuf4",
+        apiKey: "AIzaSyBsKYkb4r9kQjiWIHMcHX8XQ9RGtpiUuf4",
         appId: "1:349709842275:android:7c727b84f8560ad2c84556",
         messagingSenderId: "349709842275",
         projectId: "uolo-6b0e9",
+
       ),
     );
   }else {
@@ -94,7 +95,7 @@ class MyApp extends StatelessWidget {
 
               child: Stack(children: [
                 widget!,
-
+       
                 GetBuilder<ProfileController>(builder: (profileController) {
                   bool canShow = profileController.profileModel != null && profileController.profileModel!.subscription != null
                       && profileController.profileModel!.subscription!.isTrial == 1 && profileController.profileModel!.subscription!.status == 1

@@ -56,7 +56,7 @@ class _WalletScreenState extends State<WalletScreen> {
         elevation: 0,
         title: Padding(
       padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
-          child: Text("Uolo", style: robotoRegular.copyWith(color:  Theme.of(context).primaryColor, fontSize: 30,fontWeight: FontWeight.w900)),
+          child: Text("Uolo", style: PoppinsRegular.copyWith(color:  Theme.of(context).primaryColor, fontSize: 30,fontWeight: FontWeight.w900)),
         ),
         actions: [IconButton(
           icon: GetBuilder<NotificationController>(builder: (notificationController) {
@@ -124,13 +124,13 @@ class _WalletScreenState extends State<WalletScreen> {
 
                           Text(
                             profileController.profileModel!.dynamicBalanceType!,
-                            style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).cardColor),
+                            style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).cardColor),
                           ),
                           const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
                           Text(
                             PriceConverterHelper.convertPrice(profileController.profileModel!.dynamicBalance!),
-                            style: robotoBold.copyWith(fontSize: 22, color: Theme.of(context).cardColor),
+                            style: PoppinsBold.copyWith(fontSize: 22, color: Theme.of(context).cardColor),
                             textDirection: TextDirection.ltr,
                           ),
 
@@ -175,7 +175,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                                     borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
                                                     color: Theme.of(context).primaryColor,
                                                   ),
-                                                  child: !paymentController.adjustmentLoading ? Text('ok'.tr, style: robotoBold.copyWith(color: Theme.of(context).cardColor, fontSize: Dimensions.fontSizeLarge),)
+                                                  child: !paymentController.adjustmentLoading ? Text('ok'.tr, style: PoppinsBold.copyWith(color: Theme.of(context).cardColor, fontSize: Dimensions.fontSizeLarge),)
                                                       : const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(color: Colors.white)),
                                                 ),
                                               ),
@@ -197,7 +197,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                 borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
                                 color: Theme.of(context).cardColor,
                               ),
-                              child: Text('adjust_payments'.tr, textAlign: TextAlign.center, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+                              child: Text('adjust_payments'.tr, textAlign: TextAlign.center, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
                             ),
                           ) : const SizedBox(),
                           SizedBox(height: profileController.profileModel!.adjustable! ? Dimensions.paddingSizeLarge : 0),
@@ -213,7 +213,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                 borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
                                 color: Theme.of(context).cardColor,
                               ),
-                              child: Text('withdraw'.tr, textAlign: TextAlign.center, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+                              child: Text('withdraw'.tr, textAlign: TextAlign.center, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
                             ),
                           ) : const SizedBox(),
                           SizedBox(height: (profileController.profileModel!.balance! > 0 && profileController.profileModel!.balance! > profileController.profileModel!.cashInHands! && Get.find<SplashController>().configModel!.disbursementType == 'manual') ? Dimensions.paddingSizeSmall : 0),
@@ -239,7 +239,7 @@ class _WalletScreenState extends State<WalletScreen> {
                                 borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
                                 color: profileController.profileModel!.showPayNowButton! ? Theme.of(context).cardColor : Theme.of(context).disabledColor.withOpacity(0.8),
                               ),
-                              child: Text('pay_now'.tr, textAlign: TextAlign.center, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+                              child: Text('pay_now'.tr, textAlign: TextAlign.center, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
                             ),
                           ) : const SizedBox(),
 
@@ -280,7 +280,7 @@ class _WalletScreenState extends State<WalletScreen> {
                           hoverColor: Colors.transparent,
                           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-                            Text('withdraw_request'.tr, style: robotoMedium.copyWith(
+                            Text('withdraw_request'.tr, style: PoppinsMedium.copyWith(
                               color: bankController.selectedIndex == 0 ? Colors.blue : Theme.of(context).disabledColor,
                             )),
                             const SizedBox(height: Dimensions.paddingSizeExtraSmall),
@@ -306,7 +306,7 @@ class _WalletScreenState extends State<WalletScreen> {
                           },
                           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-                            Text('payment_history'.tr, style: robotoMedium.copyWith(
+                            Text('payment_history'.tr, style: PoppinsMedium.copyWith(
                               color: bankController.selectedIndex == 1 ? Colors.blue : Theme.of(context).disabledColor,
                             )),
                             const SizedBox(height: Dimensions.paddingSizeExtraSmall),
@@ -328,7 +328,7 @@ class _WalletScreenState extends State<WalletScreen> {
 
                     Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
 
-                      Text("transaction_history".tr, style: robotoMedium),
+                      Text("transaction_history".tr, style: PoppinsMedium),
 
                       (bankController.selectedIndex == 0 && (bankController.withdrawList != null && bankController.withdrawList!.isNotEmpty))
                       || (bankController.selectedIndex == 1 && (bankController.transactions != null && bankController.transactions!.isNotEmpty)) ? InkWell(
@@ -343,7 +343,7 @@ class _WalletScreenState extends State<WalletScreen> {
                         },
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
-                          child: Text('view_all'.tr, style: robotoMedium.copyWith(
+                          child: Text('view_all'.tr, style: PoppinsMedium.copyWith(
                             fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor,
                           )),
                         ),
@@ -380,16 +380,16 @@ class _WalletScreenState extends State<WalletScreen> {
                               child: Row(children: [
                                 Expanded(
                                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                                    Text(PriceConverterHelper.convertPrice(bankController.transactions![index].amount), style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeDefault)),
+                                    Text(PriceConverterHelper.convertPrice(bankController.transactions![index].amount), style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeDefault)),
                                     const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
-                                    Text('${'paid_via'.tr} ${bankController.transactions![index].method?.replaceAll('_', ' ').capitalize??''}', style: robotoRegular.copyWith(
+                                    Text('${'paid_via'.tr} ${bankController.transactions![index].method?.replaceAll('_', ' ').capitalize??''}', style: PoppinsRegular.copyWith(
                                       fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).disabledColor,
                                     )),
                                   ]),
                                 ),
                                 Text(bankController.transactions![index].paymentTime.toString(),
-                                  style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                                  style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                                 ),
                               ]),
                             ),
@@ -409,7 +409,7 @@ class _WalletScreenState extends State<WalletScreen> {
                 ? WalletAttentionAlertWidget(isOverFlowBlockWarning: profileController.profileModel!.overFlowBlockWarning!) : const SizedBox(),
 
             ]),
-          ) : Center(child: Text('you_have_no_permission_to_access_this_feature'.tr, style: robotoMedium)) : const Center(child: CircularProgressIndicator());
+          ) : Center(child: Text('you_have_no_permission_to_access_this_feature'.tr, style: PoppinsMedium)) : const Center(child: CircularProgressIndicator());
         });
       }),
     );

@@ -60,10 +60,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
               _isOwner ? Text(
                 '${profileController.profileModel!.fName} ${profileController.profileModel!.lName}',
-                style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
+                style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
               ) : Text(
                 '${profileController.profileModel!.employeeInfo!.fName} ${profileController.profileModel!.employeeInfo!.lName}',
-                style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
+                style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
               ),
               const SizedBox(height: 30),
 
@@ -114,9 +114,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(height: _isOwner ? Dimensions.paddingSizeLarge : 0),
 
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Text('${'version'.tr}:', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeExtraSmall)),
+                Text('${'version'.tr}:', style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeExtraSmall)),
                 const SizedBox(width: Dimensions.paddingSizeExtraSmall),
-                Text(AppConstants.appVersion.toString(), style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall)),
+                Text(AppConstants.appVersion.toString(), style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall)),
               ]),
 
             ]),

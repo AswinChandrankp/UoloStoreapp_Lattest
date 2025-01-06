@@ -24,7 +24,7 @@ class OrderWidget extends StatelessWidget {
         child: Container(
            decoration: BoxDecoration(
              color: Theme.of(context).cardColor,
-             borderRadius: BorderRadius.circular(Dimensions.radiusSmall),
+             borderRadius: BorderRadius.circular(Dimensions.radiusLarge),
              border: Border.all(width: 1, color: Theme.of(context).disabledColor),
              
            ),
@@ -35,26 +35,50 @@ class OrderWidget extends StatelessWidget {
               child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           
                 Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('${'order_id'.tr}: #${orderModel.id}', style: robotoMedium),
+                  // Text('${'order_id'.tr}: #${orderModel.id}', style: TextStyle(
+                  //   fontSize: Dimensions.fontSizeExtraLarge, color: Theme.of(context).primaryColor,fontWeight: FontWeight.bold
+                  // )),
+
+                  RichText(
+  text: TextSpan(
+    text: '${'order_id'.tr} : ',
+    style: TextStyle(
+      fontSize: Dimensions.fontSizeLarge,
+      color: Theme.of(context).disabledColor,
+      fontWeight: FontWeight.bold,
+    ),
+    children: [
+      TextSpan(
+        text: '#${orderModel.id}',
+        style: TextStyle(
+          fontSize: Dimensions.fontSizeExtraLarge + 2,
+          color: Theme.of(context).primaryColor,
+          fontWeight: FontWeight.w900,
+        ),
+      ),
+    ],
+  ),
+),
+
  const SizedBox(height: 10),
                   Text(
                           orderModel.customer!.fName!.tr,
-                          style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeLarge, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor),
+                          style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeLarge, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor),
                         ),
                   const SizedBox(height: 50),
                    Row(
                      children: [
-                       Text("Payment Status  : ".tr, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor)),
+                       Text("Payment Status  : ".tr, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor)),
                        Text(
                           orderModel.paymentStatus!.tr,
-                          style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor),
+                          style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor),
                         ),
                      ],
                    ),
                   Row(children: [
                     Text(
                       DateConverterHelper.dateTimeStringToDateTime(orderModel.createdAt!),
-                      style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                      style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                     ),
                     Container(
                       height: 10, width: 1, color: Theme.of(context).disabledColor,
@@ -64,7 +88,7 @@ class OrderWidget extends StatelessWidget {
                    
                     Text(
                       orderModel.orderType!.tr,
-                      style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor),
+                      style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor),
                     ),
                   ]),
                 ])),
@@ -79,7 +103,7 @@ class OrderWidget extends StatelessWidget {
 
                         Icon(Icons.payments, size: 25, color: Theme.of(context).primaryColor),
                         const SizedBox(width: 5),
-                        Text(orderModel.orderAmount.toString(), style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor,fontWeight: FontWeight.bold)),
+                        Text(orderModel.orderAmount.toString(), style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor,fontWeight: FontWeight.bold)),
                       ],
                     ),
                     const SizedBox(height: 80),
@@ -95,13 +119,13 @@ class OrderWidget extends StatelessWidget {
                         builder: (context) {
                           return Text(
                             orderModel.orderStatus!.tr,
-                            style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeDefault, color:   orderModel.orderStatus!.toLowerCase() == 'Pending'.toLowerCase() ? Colors.white : Theme.of(context).primaryColor),
+                            style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeDefault, color:   orderModel.orderStatus!.toLowerCase() == 'Pending'.toLowerCase() ? Colors.white : Theme.of(context).primaryColor),
                           );
                         }
                       ),
                     ) : Text(
                       '${orderModel.detailsCount} ${orderModel.detailsCount! < 2 ? 'item'.tr : 'items'.tr}',
-                      style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                      style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                     ),
                   ],
                 ),
@@ -113,12 +137,19 @@ class OrderWidget extends StatelessWidget {
           
             // hasDivider ? Divider(color: Theme.of(context).disabledColor) : const SizedBox(),
 
-            Container(
-              width: double.infinity,
-              color: Theme.of(context).primaryColor,
-              padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
-              child:   Center(child: Text(  "${ orderModel.orderStatus!.toLowerCase() == 'Pending'.toLowerCase() ? 'View Order' : 'View Order'}".tr, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).cardColor))),
-              
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Container(
+                decoration: BoxDecoration(
+                     color: Theme.of(context).primaryColor,
+                     borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
+                ),
+                width: double.infinity,
+             
+                padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
+                child:   Center(child: Text(  "${ orderModel.orderStatus!.toLowerCase() == 'Pending'.toLowerCase() ? 'View Order' : 'View Order'}".tr, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).cardColor))),
+                
+              ),
             )
           
           ]),

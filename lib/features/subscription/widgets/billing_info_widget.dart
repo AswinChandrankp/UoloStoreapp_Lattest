@@ -21,10 +21,10 @@ class BillingInfoWidget extends StatelessWidget {
 
       Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-        Text(title, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor)),
+        Text(title, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor)),
         const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
-        Text(value, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
+        Text(value, style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
 
       ]),
 

@@ -47,11 +47,11 @@ class _PendingItemDetailsScreenState extends State<PendingItemDetailsScreen> wit
       return Scaffold(
         appBar: AppBar(
             title: Column(children: [
-              Text('item_details'.tr, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).textTheme.bodyLarge!.color)),
+              Text('item_details'.tr, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).textTheme.bodyLarge!.color)),
               const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
               Text(storeController.pendingItem![0].isRejected == 0 ? 'this_item_is_under_review'.tr : 'this_item_has_been_rejected'.tr,
-                  style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: storeController.pendingItem![0].isRejected  == 0 ? Colors.blue : Theme.of(context).colorScheme.error)),
+                  style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: storeController.pendingItem![0].isRejected  == 0 ? Colors.blue : Theme.of(context).colorScheme.error)),
             ]),
             centerTitle: true,
             leading: IconButton(
@@ -118,7 +118,7 @@ class EnglishLanguageItemTab extends StatelessWidget {
                   child: Column(children: [
                     Text(
                       languageList[index].value!,
-                      style: selected ? robotoBold.copyWith(color: Theme.of(context).primaryColor) : robotoMedium,
+                      style: selected ? PoppinsBold.copyWith(color: Theme.of(context).primaryColor) : PoppinsMedium,
                     ),
                     Container(
                       height: 2, width: 100,
@@ -168,11 +168,11 @@ class EnglishLanguageItemTab extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(itemName, maxLines: 2, overflow: TextOverflow.ellipsis, style: robotoMedium),
+                              Text(itemName, maxLines: 2, overflow: TextOverflow.ellipsis, style: PoppinsMedium),
                               const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
                               Text(storeController.pendingItem![0].isRejected == 0 ? 'this_item_is_under_review'.tr : 'this_item_has_been_rejected'.tr,
-                                  style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: storeController.pendingItem![0].isRejected  == 0 ? Colors.blue : Theme.of(context).colorScheme.error)),
+                                  style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: storeController.pendingItem![0].isRejected  == 0 ? Colors.blue : Theme.of(context).colorScheme.error)),
                             ],
                           ),
                         ),
@@ -182,7 +182,7 @@ class EnglishLanguageItemTab extends StatelessWidget {
 
                   Text(
                     itemDescription,
-                    style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+                    style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
                   ),
                 ]),
               ),
@@ -288,7 +288,7 @@ class EnglishLanguageItemTab extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Wrap(
                         children: [
-                          Text(item.tags![index].tag!, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+                          Text(item.tags![index].tag!, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
                         ],
                       );
                     },

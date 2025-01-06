@@ -299,6 +299,8 @@ class OrderModel {
     data['ref_bonus_amount'] = referrerBonusAmount;
     return data;
   }
+
+  static empty() {}
 }
 
 class DeliveryMan {

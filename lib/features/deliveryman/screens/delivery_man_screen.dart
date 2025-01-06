@@ -55,7 +55,7 @@ class DeliveryManScreen extends StatelessWidget {
 
                   Expanded(child: Text(
                     '${deliveryMan.fName} ${deliveryMan.lName}', maxLines: 2, overflow: TextOverflow.ellipsis,
-                    style: robotoMedium,
+                    style: PoppinsMedium,
                   )),
                   const SizedBox(width: Dimensions.paddingSizeSmall),
 

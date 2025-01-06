@@ -52,7 +52,7 @@ class DailyTimeWidget extends StatelessWidget {
 
                       Text(
                         '${'schedule_for'.tr} ${dayString.tr}',
-                        style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+                        style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
                       ),
                       const SizedBox(height: Dimensions.paddingSizeLarge),
 
@@ -83,7 +83,7 @@ class DailyTimeWidget extends StatelessWidget {
                             ),
                             child: Text(
                               'cancel'.tr, textAlign: TextAlign.center,
-                              style: robotoBold.copyWith(color: Theme.of(context).textTheme.bodyLarge!.color),
+                              style: PoppinsBold.copyWith(color: Theme.of(context).textTheme.bodyLarge!.color),
                             ),
                           )),
                           const SizedBox(width: Dimensions.paddingSizeLarge),

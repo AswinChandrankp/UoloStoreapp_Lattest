@@ -128,6 +128,7 @@ class NotificationHelper {
   static Future<void> showNotification(RemoteMessage message, FlutterLocalNotificationsPlugin fln) async {
 
     print("----------------------------playing background --------------showNotification message :${message.data}----------------------------------------");
+    Get.find<OrderController>().getCurrentOrders();
     if(!GetPlatform.isIOS) {
       String? title;
       String? body;

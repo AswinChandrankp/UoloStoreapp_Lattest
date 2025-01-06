@@ -20,7 +20,7 @@ class _FoodVariationViewWidgetState extends State<FoodVariationViewWidget> {
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-      Text('variation'.tr, style: robotoBold),
+      Text('variation'.tr, style: PoppinsBold),
       const SizedBox(height: Dimensions.paddingSizeSmall),
 
       widget.storeController.variationList!.isNotEmpty ? ListView.builder(
@@ -58,7 +58,7 @@ class _FoodVariationViewWidgetState extends State<FoodVariationViewWidget> {
 
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-                  Text('select_type'.tr, style: robotoMedium),
+                  Text('select_type'.tr, style: PoppinsMedium),
 
                   Row( children: [
                     InkWell(
@@ -175,7 +175,7 @@ class _FoodVariationViewWidgetState extends State<FoodVariationViewWidget> {
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall, vertical: Dimensions.paddingSizeSmall),
                         decoration: BoxDecoration(color: Theme.of(context).cardColor, borderRadius: BorderRadius.circular(Dimensions.radiusSmall), border: Border.all(color: Theme.of(context).primaryColor)),
-                        child: Text('add_new_option'.tr, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeDefault)),
+                        child: Text('add_new_option'.tr, style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeDefault)),
                       ),
                     ),
                   ]),
@@ -198,7 +198,7 @@ class _FoodVariationViewWidgetState extends State<FoodVariationViewWidget> {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall, vertical: Dimensions.paddingSizeSmall),
           decoration: BoxDecoration(color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(Dimensions.radiusSmall)),
-          child: Text('add_new_variation'.tr, style: robotoMedium.copyWith(color: Theme.of(context).cardColor, fontSize: Dimensions.fontSizeDefault)),
+          child: Text('add_new_variation'.tr, style: PoppinsMedium.copyWith(color: Theme.of(context).cardColor, fontSize: Dimensions.fontSizeDefault)),
         ),
       ) : Container(
         padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall, vertical: Dimensions.paddingSizeSmall),
@@ -219,7 +219,7 @@ class _FoodVariationViewWidgetState extends State<FoodVariationViewWidget> {
 
               const Icon(Icons.add, size: 24),
 
-              Text('add_variation'.tr, style: robotoRegular.copyWith(color: Theme.of(context).disabledColor)),
+              Text('add_variation'.tr, style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor)),
 
             ]),
           ),

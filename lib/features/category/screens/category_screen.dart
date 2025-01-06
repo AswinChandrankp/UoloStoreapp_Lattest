@@ -71,11 +71,11 @@ class CategoryScreen extends StatelessWidget {
                     SizedBox(width: isCategory ? Dimensions.paddingSizeSmall : 0),
 
                     Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      Text(categories![index].name!, style: robotoRegular, maxLines: 1, overflow: TextOverflow.ellipsis),
+                      Text(categories![index].name!, style: PoppinsRegular, maxLines: 1, overflow: TextOverflow.ellipsis),
                       const SizedBox(height: Dimensions.paddingSizeExtraSmall),
                       Text(
                         '${'id'.tr}: ${categories[index].id}',
-                        style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                        style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                       ),
                     ])),
 

@@ -51,7 +51,7 @@ class AddonScreen extends StatelessWidget {
 
                   Expanded(child: Text(
                     addonController.addonList![index].name!, maxLines: 1, overflow: TextOverflow.ellipsis,
-                    style: robotoRegular,
+                    style: PoppinsRegular,
                   )),
                   const SizedBox(width: Dimensions.paddingSizeSmall),
 
@@ -59,7 +59,7 @@ class AddonScreen extends StatelessWidget {
                     addonController.addonList![index].price! > 0
                         ? PriceConverterHelper.convertPrice(addonController.addonList![index].price) : 'free'.tr,
                     maxLines: 1, overflow: TextOverflow.ellipsis,
-                    style: robotoRegular,
+                    style: PoppinsRegular,
                   ),
                   const SizedBox(width: Dimensions.paddingSizeSmall),
 
@@ -68,11 +68,11 @@ class AddonScreen extends StatelessWidget {
                       return <PopupMenuEntry>[
                         PopupMenuItem(
                           value: 'edit',
-                          child: Text('edit'.tr, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+                          child: Text('edit'.tr, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
                         ),
                         PopupMenuItem(
                           value: 'delete',
-                          child: Text('delete'.tr, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Colors.red)),
+                          child: Text('delete'.tr, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Colors.red)),
                         ),
                       ];
                     },

@@ -49,16 +49,16 @@ class PackageCardWidget extends StatelessWidget {
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
-              child: Text(package.packageName ?? '', style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge, color: currentIndex != null ? Theme.of(context).cardColor : Theme.of(context).primaryColor), textAlign: TextAlign.center),
+              child: Text(package.packageName ?? '', style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeLarge, color: currentIndex != null ? Theme.of(context).cardColor : Theme.of(context).primaryColor), textAlign: TextAlign.center),
             ),
             const SizedBox(height: Dimensions.paddingSizeSmall),
 
             Text(
               isCommission ? '${package.price} %' : PriceConverterHelper.convertPrice(package.price),
-              style: robotoBold.copyWith(fontSize: 30, color: currentIndex != null ? Theme.of(context).cardColor : Theme.of(context).primaryColor),
+              style: PoppinsBold.copyWith(fontSize: 30, color: currentIndex != null ? Theme.of(context).cardColor : Theme.of(context).primaryColor),
             ),
 
-            isCommission ? const SizedBox() : Text('${package.validity} ' 'days'.tr, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Colors.white.withOpacity(0.7))),
+            isCommission ? const SizedBox() : Text('${package.validity} ' 'days'.tr, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Colors.white.withOpacity(0.7))),
 
             isCommission ? const SizedBox() : Divider(color: currentIndex != null ? Theme.of(context).cardColor.withOpacity(0.2) : Theme.of(context).disabledColor.withOpacity(0.3), indent: 70, endIndent: 70, thickness: 1),
             const SizedBox(height: Dimensions.paddingSizeDefault),
@@ -66,7 +66,7 @@ class PackageCardWidget extends StatelessWidget {
             isCommission ? Padding(
               padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
               child: Text(package.description ?? '', textAlign: TextAlign.center,
-                  style: robotoRegular.copyWith(color: currentIndex != null ? Theme.of(context).cardColor.withOpacity(0.8) : Theme.of(context).disabledColor.withOpacity(0.3)),
+                  style: PoppinsRegular.copyWith(color: currentIndex != null ? Theme.of(context).cardColor.withOpacity(0.8) : Theme.of(context).disabledColor.withOpacity(0.3)),
               ),
             ) : Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 

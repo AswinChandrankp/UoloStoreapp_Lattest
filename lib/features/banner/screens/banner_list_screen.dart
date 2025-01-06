@@ -46,11 +46,11 @@ class _BannerListScreenState extends State<BannerListScreen> {
                 Row(children: [
                   Image.asset(Images.noteIcon, height: 21, width: 21),
                   const SizedBox(width: Dimensions.paddingSizeSmall),
-                  Text('note'.tr, style: robotoBold.copyWith(color: Colors.white)),
+                  Text('note'.tr, style: PoppinsBold.copyWith(color: Colors.white)),
                 ]),
                 const SizedBox(height: Dimensions.paddingSizeDefault),
                 Text('customer_will_see_these_banners_in_your_store_details_page_in_website_and_user_apps'.tr,
-                  style: robotoMedium.copyWith(color: Colors.white, fontSize: Dimensions.fontSizeSmall),
+                  style: PoppinsMedium.copyWith(color: Colors.white, fontSize: Dimensions.fontSizeSmall),
                 ),
               ]),
             ),
@@ -99,7 +99,7 @@ class _BannerListScreenState extends State<BannerListScreen> {
                             Expanded(child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
                                 Wrap(crossAxisAlignment: WrapCrossAlignment.center, runAlignment: WrapAlignment.center, children: [
-                                  Text('${'redirection_url'.tr}: ', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: bannerController.storeBannerList![index].defaultLink != null ? Theme.of(context).textTheme.bodyLarge!.color : Theme.of(context).disabledColor)),
+                                  Text('${'redirection_url'.tr}: ', style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: bannerController.storeBannerList![index].defaultLink != null ? Theme.of(context).textTheme.bodyLarge!.color : Theme.of(context).disabledColor)),
                                   const SizedBox(height: Dimensions.paddingSizeSmall),
 
                                   InkWell(
@@ -109,17 +109,17 @@ class _BannerListScreenState extends State<BannerListScreen> {
                                       }
                                     },
                                     child: Text(bannerController.storeBannerList![index].defaultLink == null ? 'N/A' : bannerController.storeBannerList![index].defaultLink.toString(),
-                                      style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: bannerController.storeBannerList![index].defaultLink != null ? Colors.blue : Theme.of(context).disabledColor),
+                                      style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: bannerController.storeBannerList![index].defaultLink != null ? Colors.blue : Theme.of(context).disabledColor),
                                     ),
                                   ),
 
                                 ]),
                                 const SizedBox(height: Dimensions.paddingSizeSmall),
                                 Wrap(crossAxisAlignment: WrapCrossAlignment.center, runAlignment: WrapAlignment.center, children: [
-                                  Text('${'title'.tr}: ', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+                                  Text('${'title'.tr}: ', style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
                                   const SizedBox(height: Dimensions.paddingSizeSmall),
 
-                                  Text(bannerController.storeBannerList![index].title.toString(), style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+                                  Text(bannerController.storeBannerList![index].title.toString(), style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
                                 ]),
                               ],
                             )),
@@ -162,7 +162,7 @@ class _BannerListScreenState extends State<BannerListScreen> {
                         ]),
                       );
                     },
-                  ) : Center(child: Text('no_banner_found'.tr, style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge))) : const Center(child: CircularProgressIndicator());
+                  ) : Center(child: Text('no_banner_found'.tr, style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeLarge))) : const Center(child: CircularProgressIndicator());
                 }
               ),
             ),

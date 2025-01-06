@@ -46,7 +46,7 @@ class NotificationDialogWidget extends StatelessWidget {
               child: Text(
                 notificationModel.title!,
                 textAlign: TextAlign.center,
-                style: robotoMedium.copyWith(color: Theme.of(context).primaryColor, fontSize: Dimensions.fontSizeLarge),
+                style: PoppinsMedium.copyWith(color: Theme.of(context).primaryColor, fontSize: Dimensions.fontSizeLarge),
               ),
             ),
 
@@ -55,7 +55,7 @@ class NotificationDialogWidget extends StatelessWidget {
               child: Text(
                 notificationModel.description!,
                 textAlign: TextAlign.center,
-                style: robotoRegular.copyWith(color: Theme.of(context).disabledColor),
+                style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor),
               ),
             ),
 

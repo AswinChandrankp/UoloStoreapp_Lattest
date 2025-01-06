@@ -144,7 +144,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                   Text(
                     //authController.storeStatus == 0.1 ? 'provide_store_information_to_proceed_next'.tr : 'provide_owner_information_to_confirm'.tr,
                     authController.storeStatus == 0.1 ? 'provide_store_information_to_proceed_next'.tr : authController.storeStatus == 0.6 ? 'provide_owner_information_to_confirm'.tr : 'you_are_one_step_away_choose_your_business_plan'.tr,
-                    style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).hintColor),
+                    style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).hintColor),
                   ),
                   const SizedBox(height: Dimensions.paddingSizeSmall),
 
@@ -168,7 +168,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                         key: _formKeyLogin,
                         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-                          Text('store_info'.tr, style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge)),
+                          Text('store_info'.tr, style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeLarge)),
                           const SizedBox(height: Dimensions.paddingSizeDefault),
 
                           Container(
@@ -191,8 +191,8 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                                     indicatorWeight: 3,
                                     labelColor: Theme.of(context).primaryColor,
                                     unselectedLabelColor: Theme.of(context).disabledColor,
-                                    unselectedLabelStyle: robotoRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall),
-                                    labelStyle: robotoBold.copyWith(fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).primaryColor),
+                                    unselectedLabelStyle: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall),
+                                    labelStyle: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).primaryColor),
                                     labelPadding: const EdgeInsets.only(right: Dimensions.radiusDefault),
                                     isScrollable: true,
                                     indicatorSize: TabBarIndicatorSize.tab,
@@ -228,8 +228,8 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
                                     Row(children: [
-                                      Text('store_logo'.tr, style: robotoRegular.copyWith(color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7))),
-                                      Text(' (${'1:1'})', style: robotoRegular.copyWith(color: Theme.of(context).hintColor, fontSize: Dimensions.fontSizeSmall)),
+                                      Text('store_logo'.tr, style: PoppinsRegular.copyWith(color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7))),
+                                      Text(' (${'1:1'})', style: PoppinsRegular.copyWith(color: Theme.of(context).hintColor, fontSize: Dimensions.fontSizeSmall)),
                                     ]),
                                     const SizedBox(height: Dimensions.paddingSizeDefault),
 
@@ -253,7 +253,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                                                 padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
                                                 child: Text(
                                                   'upload_store_logo'.tr,
-                                                  style: robotoRegular.copyWith(color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7)), textAlign: TextAlign.center,
+                                                  style: PoppinsRegular.copyWith(color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7)), textAlign: TextAlign.center,
                                                 ),
                                               ),
 
@@ -298,8 +298,8 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
                                     Row(children: [
-                                      Text('store_cover'.tr, style: robotoRegular.copyWith(color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7))),
-                                      Text(' (${'3:1'})', style: robotoRegular.copyWith(color: Theme.of(context).hintColor, fontSize: Dimensions.fontSizeSmall)),
+                                      Text('store_cover'.tr, style: PoppinsRegular.copyWith(color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7))),
+                                      Text(' (${'3:1'})', style: PoppinsRegular.copyWith(color: Theme.of(context).hintColor, fontSize: Dimensions.fontSizeSmall)),
                                     ]),
                                     const SizedBox(height: Dimensions.paddingSizeDefault),
 
@@ -320,14 +320,14 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
 
                                               Text(
                                                 'upload_store_cover'.tr,
-                                                style: robotoRegular.copyWith(color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7)), textAlign: TextAlign.center,
+                                                style: PoppinsRegular.copyWith(color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7)), textAlign: TextAlign.center,
                                               ),
 
                                               Padding(
                                                 padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
                                                 child: Text(
                                                   'upload_jpg_png_gif_maximum_2_mb'.tr,
-                                                  style: robotoRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.6), fontSize: Dimensions.fontSizeSmall),
+                                                  style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor.withOpacity(0.6), fontSize: Dimensions.fontSizeSmall),
                                                   textAlign: TextAlign.center,
                                                 ),
                                               ),
@@ -374,7 +374,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                           ),
                           const SizedBox(height: Dimensions.paddingSizeDefault),
 
-                          Text('location_info'.tr, style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge)),
+                          Text('location_info'.tr, style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeLarge)),
                           const SizedBox(height: Dimensions.paddingSizeDefault),
 
                           addressController.zoneList != null ? SelectLocationAndModuleViewWidget(
@@ -383,7 +383,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
 
                           const SizedBox(height: Dimensions.paddingSizeLarge),
 
-                          Text('store_preference'.tr, style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge)),
+                          Text('store_preference'.tr, style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeLarge)),
                           const SizedBox(height: Dimensions.paddingSizeDefault),
 
                           Container(
@@ -432,7 +432,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                                       child: Row(children: [
                                         Expanded(child: Text(
                                           '${authController.storeMinTime} : ${authController.storeMaxTime} ${authController.storeTimeUnit}',
-                                          style: robotoMedium,
+                                          style: PoppinsMedium,
                                         )),
                                         Icon(Icons.access_time_filled, color: Theme.of(context).primaryColor,)
                                       ]),
@@ -445,7 +445,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                                           color: Theme.of(context).cardColor,
                                         ),
                                         padding: const EdgeInsets.all(5),
-                                        child: Text('select_time'.tr, style: robotoRegular.copyWith(color: Theme.of(context).disabledColor)),
+                                        child: Text('select_time'.tr, style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor)),
                                       ),
                                     ),
                                   ],
@@ -465,7 +465,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                         child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
 
                           Row(children: [
-                            Text('owner_info'.tr, style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge)),
+                            Text('owner_info'.tr, style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeLarge)),
                             const SizedBox(width: Dimensions.paddingSizeSmall),
 
                             CustomToolTip(
@@ -608,7 +608,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
 
                         Padding(
                           padding: const EdgeInsets.only(top: Dimensions.paddingSizeLarge, bottom: Dimensions.paddingSizeExtremeLarge),
-                          child: Center(child: Text('choose_your_business_plan'.tr, style: robotoBold)),
+                          child: Center(child: Text('choose_your_business_plan'.tr, style: PoppinsBold)),
                         ),
 
                         Padding(
@@ -636,14 +636,14 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
                           padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeLarge),
                           child: Text(
                             "${'store_will_pay'.tr} ${Get.find<SplashController>().configModel!.adminCommission}% ${'commission_to'.tr} ${Get.find<SplashController>().configModel!.businessName} ${'from_each_order_You_will_get_access_of_all'.tr}",
-                            style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7)), textAlign: TextAlign.justify, textScaler: const TextScaler.linear(1.1),
+                            style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7)), textAlign: TextAlign.justify, textScaler: const TextScaler.linear(1.1),
                           ),
                         ) : Column(children: [
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeLarge),
                             child: Text(
                               'run_store_by_purchasing_subscription_packages'.tr,
-                              style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7)), textAlign: TextAlign.justify, textScaler: const TextScaler.linear(1.1),
+                              style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).textTheme.bodyLarge?.color?.withOpacity(0.7)), textAlign: TextAlign.justify, textScaler: const TextScaler.linear(1.1),
                             ),
                           ),
                           const SizedBox(height: Dimensions.paddingSizeLarge),
@@ -668,7 +668,7 @@ class _StoreRegistrationScreenState extends State<StoreRegistrationScreen> with 
 
                             ) : Center(child: Column(mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text('no_package_available'.tr, style: robotoMedium),
+                                  Text('no_package_available'.tr, style: PoppinsMedium),
                                 ]),
                             ) : const Center(child: CircularProgressIndicator()),
                           ),

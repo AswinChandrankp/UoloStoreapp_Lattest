@@ -48,29 +48,29 @@ class TransactionDetailsBottomSheet extends StatelessWidget {
 
             Column(children: [
 
-              Text('${'transaction_successful'.tr}!', style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).textTheme.bodyLarge!.color?.withOpacity(0.6))),
+              Text('${'transaction_successful'.tr}!', style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).textTheme.bodyLarge!.color?.withOpacity(0.6))),
 
-              Text('${'for'.tr} ${transactions.package!.packageName} ${'package'.tr}', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+              Text('${'for'.tr} ${transactions.package!.packageName} ${'package'.tr}', style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
               const SizedBox(height: Dimensions.paddingSizeDefault),
 
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Text('${'purchase_status'.tr} : ', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+                Text('${'purchase_status'.tr} : ', style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
                 Text(
                   transactions.planType == 'renew' ? 'renewed'.tr : transactions.planType == 'new_plan' ? 'migrated'.tr : transactions.planType == 'free_trial' ? 'free_trial'.tr : 'purchased'.tr,
-                  style: robotoBold.copyWith(color: Theme.of(context).primaryColor),
+                  style: PoppinsBold.copyWith(color: Theme.of(context).primaryColor),
                 ),
               ]),
               const SizedBox(height: Dimensions.paddingSizeSmall),
 
-              Text(transactions.store?.name ?? '', style: robotoBold.copyWith(fontSize: 15)),
+              Text(transactions.store?.name ?? '', style: PoppinsBold.copyWith(fontSize: 15)),
               const SizedBox(height: Dimensions.paddingSizeSmall),
 
               RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(children: [
-                  TextSpan(text: 'thank_you_for_transaction_with'.tr, style: robotoRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall)),
-                  TextSpan(text: ' ${AppConstants.appName} ', style: robotoBold.copyWith(color: Theme.of(context).primaryColor)),
-                  TextSpan(text: '${'in'.tr} ${transactions.package!.packageName} ${'package'.tr}', style: robotoRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall)),
+                  TextSpan(text: 'thank_you_for_transaction_with'.tr, style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall)),
+                  TextSpan(text: ' ${AppConstants.appName} ', style: PoppinsBold.copyWith(color: Theme.of(context).primaryColor)),
+                  TextSpan(text: '${'in'.tr} ${transactions.package!.packageName} ${'package'.tr}', style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall)),
                 ]),
               ),
 
@@ -88,32 +88,32 @@ class TransactionDetailsBottomSheet extends StatelessWidget {
               child: Column(mainAxisSize: MainAxisSize.min, children: [
 
                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                  Text('transaction_id'.tr, style: robotoRegular),
-                  Text(transactions.id!, style: robotoRegular),
+                  Text('transaction_id'.tr, style: PoppinsRegular),
+                  Text(transactions.id!, style: PoppinsRegular),
                 ]),
                 const SizedBox(height: Dimensions.paddingSizeDefault),
 
                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                  Text('package_name'.tr, style: robotoRegular),
-                  Text(transactions.package?.packageName ?? '', style: robotoRegular),
+                  Text('package_name'.tr, style: PoppinsRegular),
+                  Text(transactions.package?.packageName ?? '', style: PoppinsRegular),
                 ]),
                 const SizedBox(height: Dimensions.paddingSizeDefault),
 
                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                  Text('time'.tr, style: robotoRegular),
-                  Text(DateConverterHelper.utcToDate(transactions.createdAt!), style: robotoRegular),
+                  Text('time'.tr, style: PoppinsRegular),
+                  Text(DateConverterHelper.utcToDate(transactions.createdAt!), style: PoppinsRegular),
                 ]),
                 const SizedBox(height: Dimensions.paddingSizeDefault),
 
                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                  Text('validity'.tr, style: robotoRegular),
-                  Text('${transactions.validity} ${'days'.tr}', style: robotoRegular),
+                  Text('validity'.tr, style: PoppinsRegular),
+                  Text('${transactions.validity} ${'days'.tr}', style: PoppinsRegular),
                 ]),
                 const SizedBox(height: Dimensions.paddingSizeDefault),
 
                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                  Text('amount'.tr, style: robotoRegular),
-                  Text(PriceConverterHelper.convertPrice(transactions.paidAmount), style: robotoRegular),
+                  Text('amount'.tr, style: PoppinsRegular),
+                  Text(PriceConverterHelper.convertPrice(transactions.paidAmount), style: PoppinsRegular),
                 ]),
                 const SizedBox(height: 40),
 

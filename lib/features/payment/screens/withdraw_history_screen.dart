@@ -64,7 +64,7 @@ class WithdrawHistoryScreen extends StatelessWidget {
     return PopupMenuItem(
       value: status,
       height: 30,
-      child: Text(status.toLowerCase().tr, style: robotoRegular.copyWith(
+      child: Text(status.toLowerCase().tr, style: PoppinsRegular.copyWith(
         color: status == 'Pending' ? Theme.of(context).primaryColor : status == 'Approved' ? Colors.green : status == 'Denied' ? Colors.red : null,
       )),
     );

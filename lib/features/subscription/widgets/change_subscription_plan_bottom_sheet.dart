@@ -93,13 +93,13 @@ class _ChangeSubscriptionPlanBottomSheetState extends State<ChangeSubscriptionPl
 
           Text(
             (businessIsNone || (businessIsUnsubscribed && (subscriptionController.profileModel?.subscription == null))) ? 'chose_a_business'.tr : 'change_subscription_plan'.tr,
-            style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge),
+            style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeLarge),
           ),
           const SizedBox(height: Dimensions.paddingSizeDefault),
 
           Text(
             (businessIsNone || (businessIsUnsubscribed && (subscriptionController.profileModel?.subscription == null))) ? 'chose_a_business_plan_to_get_better_experience'.tr : 'renew_or_shift_your_plan_to_get_better_experience'.tr,
-            style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).textTheme.bodyLarge!.color?.withOpacity(0.5)),
+            style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).textTheme.bodyLarge!.color?.withOpacity(0.5)),
           ),
           const SizedBox(height: Dimensions.paddingSizeDefault),
 

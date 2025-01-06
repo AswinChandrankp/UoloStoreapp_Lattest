@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Theme.of(context).primaryColor,
         // leading: Padding(
         //   padding: const EdgeInsets.only(left: Dimensions.paddingSizeDefault, top: Dimensions.paddingSizeSmall, bottom: Dimensions.paddingSizeSmall),
-        //   child:  Text("Uolo", style: robotoRegular.copyWith(color: Colors.white, fontSize: 18,fontWeight: FontWeight.w900)),
+        //   child:  Text("Uolo", style: PoppinsRegular.copyWith(color: Colors.white, fontSize: 18,fontWeight: FontWeight.w900)),
           
         //   // Image.asset(Images.logo, height: 30, width: 30),
         // ),
@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         title:  Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text("Uolo", style: robotoRegular.copyWith(color: Colors.white, fontSize: 30,fontWeight: FontWeight.w900)),
+          child: Text("Uolo", style: PoppinsRegular.copyWith(color: Colors.white, fontSize: 30,fontWeight: FontWeight.w900)),
         ),
         actions: [IconButton(
           icon: GetBuilder<NotificationController>(builder: (notificationController) {
@@ -207,12 +207,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   children: [
                                                     Text(
                                                       'today'.tr,
-                                                      style: robotoRegular.copyWith(color: Theme.of(context).cardColor),
+                                                      style: PoppinsRegular.copyWith(color: Theme.of(context).cardColor),
                                                     ),
                                                     const SizedBox(height: Dimensions.paddingSizeSmall),
                                                     Text(
                                                       profileController.profileModel != null ? PriceConverterHelper.convertPrice(profileController.profileModel!.todaysEarning) : '0',
-                                                      style: robotoBold.copyWith(fontSize: 24, color: Theme.of(context).cardColor),
+                                                      style: PoppinsBold.copyWith(fontSize: 24, color: Theme.of(context).cardColor),
                                                     ),
                                                   ],
                                                 ),
@@ -221,12 +221,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   children: [
                                                     Text(
                                   'this_week'.tr,
-                                  style: robotoRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
+                                  style: PoppinsRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
                                 ),
                                                     const SizedBox(height: Dimensions.paddingSizeSmall),
                                                    Text(
                                   profileController.profileModel != null ? PriceConverterHelper.convertPrice(profileController.profileModel!.thisWeekEarning) : '0',
-                                  style: robotoBold.copyWith(fontSize: 24, color: Theme.of(context).cardColor),
+                                  style: PoppinsBold.copyWith(fontSize: 24, color: Theme.of(context).cardColor),
                                 ),
                                                   ],
                                                 ),
@@ -236,12 +236,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                   children: [
                                      Text(
                                   'this_month'.tr,
-                                  style: robotoRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
+                                  style: PoppinsRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
                                 ),
                                 const SizedBox(height: Dimensions.paddingSizeExtraSmall),
                                 Text(
                                   profileController.profileModel != null ? PriceConverterHelper.convertPrice(profileController.profileModel!.thisMonthEarning) : '0',
-                                  style: robotoBold.copyWith(fontSize: 24, color: Theme.of(context).cardColor),
+                                  style: PoppinsBold.copyWith(fontSize: 24, color: Theme.of(context).cardColor),
                                 ),
                                   ],
                                 )
@@ -271,12 +271,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 
                   //         Text(
                   //           'today'.tr,
-                  //           style: robotoRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
+                  //           style: PoppinsRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
                   //         ),
                   //         const SizedBox(height: Dimensions.paddingSizeSmall),
                   //         Text(
                   //           profileController.profileModel != null ? PriceConverterHelper.convertPrice(profileController.profileModel!.todaysEarning) : '0',
-                  //           style: robotoBold.copyWith(fontSize: 24, color: Theme.of(context).cardColor),
+                  //           style: PoppinsBold.copyWith(fontSize: 24, color: Theme.of(context).cardColor),
                   //         ),
 
                           
@@ -300,12 +300,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 
                   //             Text(
                   //               'this_week'.tr,
-                  //               style: robotoRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
+                  //               style: PoppinsRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
                   //             ),
                   //             const SizedBox(height: Dimensions.paddingSizeExtraSmall),
                   //             Text(
                   //               profileController.profileModel != null ? PriceConverterHelper.convertPrice(profileController.profileModel!.thisWeekEarning) : '0',
-                  //               style: robotoBold.copyWith(fontSize: Dimensions.fontSizeExtraLarge, color: Theme.of(context).cardColor),
+                  //               style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeExtraLarge, color: Theme.of(context).cardColor),
                   //             ),
                 
                   //           ]),
@@ -323,12 +323,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 
                   //             Text(
                   //               'this_month'.tr,
-                  //               style: robotoRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
+                  //               style: PoppinsRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
                   //             ),
                   //             const SizedBox(height: Dimensions.paddingSizeExtraSmall),
                   //             Text(
                   //               profileController.profileModel != null ? PriceConverterHelper.convertPrice(profileController.profileModel!.thisMonthEarning) : '0',
-                  //               style: robotoBold.copyWith(fontSize: Dimensions.fontSizeExtraLarge, color: Theme.of(context).cardColor),
+                  //               style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeExtraLarge, color: Theme.of(context).cardColor),
                   //             ),
                 
                   //           ]),

@@ -18,11 +18,11 @@ class ProfileCardWidget extends StatelessWidget {
         boxShadow: [BoxShadow(color: Colors.grey[Get.isDarkMode ? 850 : 200]!, blurRadius: 5, spreadRadius: 1)],
       ),
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Text(data, style: robotoMedium.copyWith(
+        Text(data, style: PoppinsMedium.copyWith(
           fontSize: Dimensions.fontSizeExtraLarge, color: Theme.of(context).primaryColor,
         )),
         const SizedBox(height: Dimensions.paddingSizeSmall),
-        Text(title, style: robotoRegular.copyWith(
+        Text(title, style: PoppinsRegular.copyWith(
           fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor,
         )),
       ]),

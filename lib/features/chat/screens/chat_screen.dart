@@ -205,13 +205,13 @@ class _ChatScreenState extends State<ChatScreen> {
                             inputFormatters: [LengthLimitingTextInputFormatter(Dimensions.messageInputLength)],
                             controller: _inputMessageController,
                             textCapitalization: TextCapitalization.sentences,
-                            style: robotoRegular,
+                            style: PoppinsRegular,
                             keyboardType: TextInputType.multiline,
                             maxLines: null,
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: 'type_here'.tr,
-                              hintStyle: robotoRegular.copyWith(color: Theme.of(context).hintColor, fontSize: Dimensions.fontSizeLarge),
+                              hintStyle: PoppinsRegular.copyWith(color: Theme.of(context).hintColor, fontSize: Dimensions.fontSizeLarge),
                             ),
                             onSubmitted: (String newText) {
                               if(newText.trim().isNotEmpty && !Get.find<ChatController>().isSendButtonActive) {

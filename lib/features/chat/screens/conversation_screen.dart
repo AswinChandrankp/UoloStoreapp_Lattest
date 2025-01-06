@@ -150,13 +150,13 @@ class _ConversationScreenState extends State<ConversationScreen> {
 
                                         Expanded(child: Column(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-                                          user != null ? Text('${user.fName} ${user.lName}', style: robotoMedium)
-                                              : Text('${type!.tr} ${'deleted'.tr}', style: robotoMedium),
+                                          user != null ? Text('${user.fName} ${user.lName}', style: PoppinsMedium)
+                                              : Text('${type!.tr} ${'deleted'.tr}', style: PoppinsMedium),
                                           const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
                                           user != null ? Text(
                                             type!.tr,
-                                            style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                                            style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                                           ) : const SizedBox(),
                                         ])),
                                       ]),
@@ -166,7 +166,7 @@ class _ConversationScreenState extends State<ConversationScreen> {
                                       right: Get.find<LocalizationController>().isLtr ? 5 : null, bottom: 5, left: Get.find<LocalizationController>().isLtr ? null : 5,
                                       child: Text(
                                         DateConverterHelper.localDateToIsoStringAMPM(DateConverterHelper.dateTimeStringToDate(conversation.lastMessageTime!)),
-                                        style: robotoRegular.copyWith(color: Theme.of(context).hintColor, fontSize: Dimensions.fontSizeExtraSmall),
+                                        style: PoppinsRegular.copyWith(color: Theme.of(context).hintColor, fontSize: Dimensions.fontSizeExtraSmall),
                                       ),
                                     ) : const SizedBox(),
 
@@ -181,7 +181,7 @@ class _ConversationScreenState extends State<ConversationScreen> {
                                         child: Text(
                                           conversation.lastMessage != null ? (conversation.lastMessage!.senderId == user.id)
                                               ? conversation.unreadMessageCount.toString() : '' : conversation.unreadMessageCount.toString(),
-                                          style: robotoMedium.copyWith(color: Theme.of(context).cardColor, fontSize: Dimensions.fontSizeExtraSmall),
+                                          style: PoppinsMedium.copyWith(color: Theme.of(context).cardColor, fontSize: Dimensions.fontSizeExtraSmall),
                                         )),
                                     ) : const SizedBox(),
 

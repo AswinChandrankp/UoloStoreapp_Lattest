@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
         surfaceTintColor: Theme.of(context).cardColor,
         shadowColor: Theme.of(context).disabledColor.withOpacity(0.5),
         elevation: 2,
-        title: Text(AppConstants.appName, maxLines: 1, overflow: TextOverflow.ellipsis, style: robotoMedium.copyWith(
+        title: Text(AppConstants.appName, maxLines: 1, overflow: TextOverflow.ellipsis, style: PoppinsMedium.copyWith(
           color: Theme.of(context).textTheme.bodyLarge!.color, fontSize: Dimensions.fontSizeDefault,
         )),
         actions: [IconButton(
@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 
                   Get.find<ProfileController>().modulePermission != null && Get.find<ProfileController>().modulePermission!.storeSetup! ? Row(children: [
                     Expanded(child: Text(
-                      Get.find<SplashController>().configModel!.moduleConfig!.module!.showRestaurantText! ? 'restaurant_temporarily_closed'.tr : 'store_temporarily_closed'.tr, style: robotoMedium,
+                      Get.find<SplashController>().configModel!.moduleConfig!.module!.showRestaurantText! ? 'restaurant_temporarily_closed'.tr : 'store_temporarily_closed'.tr, style: PoppinsMedium,
                       maxLines: 1, overflow: TextOverflow.ellipsis,
                     )),
                     profileController.profileModel != null ? GetBuilder<OrderController>(builder: (orderController) {
@@ -161,12 +161,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 
                           Text(
                             'today'.tr,
-                            style: robotoRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
+                            style: PoppinsRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
                           ),
                           const SizedBox(height: Dimensions.paddingSizeSmall),
                           Text(
                             profileController.profileModel != null ? PriceConverterHelper.convertPrice(profileController.profileModel!.todaysEarning) : '0',
-                            style: robotoBold.copyWith(fontSize: 24, color: Theme.of(context).cardColor),
+                            style: PoppinsBold.copyWith(fontSize: 24, color: Theme.of(context).cardColor),
                           ),
                 
                         ]),
@@ -188,12 +188,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 
                               Text(
                                 'this_week'.tr,
-                                style: robotoRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
+                                style: PoppinsRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
                               ),
                               const SizedBox(height: Dimensions.paddingSizeExtraSmall),
                               Text(
                                 profileController.profileModel != null ? PriceConverterHelper.convertPrice(profileController.profileModel!.thisWeekEarning) : '0',
-                                style: robotoBold.copyWith(fontSize: Dimensions.fontSizeExtraLarge, color: Theme.of(context).cardColor),
+                                style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeExtraLarge, color: Theme.of(context).cardColor),
                               ),
                 
                             ]),
@@ -211,12 +211,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 
                               Text(
                                 'this_month'.tr,
-                                style: robotoRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
+                                style: PoppinsRegular.copyWith(color: Theme.of(context).cardColor.withOpacity(0.7)),
                               ),
                               const SizedBox(height: Dimensions.paddingSizeExtraSmall),
                               Text(
                                 profileController.profileModel != null ? PriceConverterHelper.convertPrice(profileController.profileModel!.thisMonthEarning) : '0',
-                                style: robotoBold.copyWith(fontSize: Dimensions.fontSizeExtraLarge, color: Theme.of(context).cardColor),
+                                style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeExtraLarge, color: Theme.of(context).cardColor),
                               ),
                 
                             ]),

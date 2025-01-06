@@ -42,9 +42,9 @@ class _ReviewReplyScreenState extends State<ReviewReplyScreen> {
       appBar: CustomAppBarWidget(
         titleWidget: Column(children: [
 
-          Text(!widget.storeReviewReplyStatus! ? 'review'.tr : widget.storeReviewReplyStatus! && widget.isGiveReply ? 'review_reply'.tr : 'update_reply'.tr, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge, fontWeight: FontWeight.w600, color: Theme.of(context).textTheme.bodyLarge!.color)),
+          Text(!widget.storeReviewReplyStatus! ? 'review'.tr : widget.storeReviewReplyStatus! && widget.isGiveReply ? 'review_reply'.tr : 'update_reply'.tr, style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge, fontWeight: FontWeight.w600, color: Theme.of(context).textTheme.bodyLarge!.color)),
 
-          Text('# ${widget.review.reviewId}', style: robotoRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeDefault)),
+          Text('# ${widget.review.reviewId}', style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeDefault)),
 
         ]),
       ),
@@ -71,7 +71,7 @@ class _ReviewReplyScreenState extends State<ReviewReplyScreen> {
                     Expanded(
                       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-                        Text(widget.review.itemName ?? '', style: robotoBold, overflow: TextOverflow.ellipsis, maxLines: 1),
+                        Text(widget.review.itemName ?? '', style: PoppinsBold, overflow: TextOverflow.ellipsis, maxLines: 1),
                         const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
                         RatingBarWidget(rating: widget.review.rating?.toDouble(), ratingCount: null, size: 20),
@@ -81,10 +81,10 @@ class _ReviewReplyScreenState extends State<ReviewReplyScreen> {
                   ]),
                   const SizedBox(height: Dimensions.paddingSizeDefault),
 
-                  Text(widget.review.customerName ?? '', style: robotoBold),
+                  Text(widget.review.customerName ?? '', style: PoppinsBold),
                   const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
-                  Text(widget.review.comment ?? '', style: robotoRegular),
+                  Text(widget.review.comment ?? '', style: PoppinsRegular),
 
                   const SizedBox(height: Dimensions.paddingSizeLarge),
 
@@ -103,7 +103,7 @@ class _ReviewReplyScreenState extends State<ReviewReplyScreen> {
                       borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
                       border: Border.all(color: Theme.of(context).primaryColor.withOpacity(0.2)),
                     ),
-                    child: Text(widget.review.reply ?? '', style: robotoRegular, maxLines: 5, overflow: TextOverflow.ellipsis),
+                    child: Text(widget.review.reply ?? '', style: PoppinsRegular, maxLines: 5, overflow: TextOverflow.ellipsis),
                   ) : const SizedBox(),
 
                 ]),

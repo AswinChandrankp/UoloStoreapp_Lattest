@@ -93,18 +93,18 @@ import 'package:get/get.dart';
 //                       Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
 //                         Text(
-//                           item.name!, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
+//                           item.name!, style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
 //                           maxLines: 1, overflow: TextOverflow.ellipsis,
 //                         ),
 
 //                         module != null && module.stock != null ? Row(children: [
 
-//                           Text('${'total_stock'.tr}:', style: robotoRegular),
+//                           Text('${'total_stock'.tr}:', style: PoppinsRegular),
 //                           const SizedBox(width: Dimensions.paddingSizeExtraSmall),
 
 //                           Text(
 //                             item.stock.toString(),
-//                             style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
+//                             style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
 //                           ),
 
 //                         ]) : const SizedBox(),
@@ -112,7 +112,7 @@ import 'package:get/get.dart';
 
 //                         Text(
 //                           '${'price'.tr}: ${item.price}', maxLines: 1, overflow: TextOverflow.ellipsis,
-//                           style: robotoRegular,
+//                           style: PoppinsRegular,
 //                         ),
 
 //                         Row(children: [
@@ -121,7 +121,7 @@ import 'package:get/get.dart';
 //                             '${'discount'.tr}: ${item.discount} ${item.discountType == 'percent' ? '%'
 //                                 : Get.find<SplashController>().configModel!.currencySymbol}',
 //                             maxLines: 1, overflow: TextOverflow.ellipsis,
-//                             style: robotoRegular,
+//                             style: PoppinsRegular,
 //                           )),
 
 //                           (module!.unit! || Get.find<SplashController>().configModel!.toggleVegNonVeg!) ? Container(
@@ -132,7 +132,7 @@ import 'package:get/get.dart';
 //                             ),
 //                             child: Text(
 //                               module.unit! ? item.unitType??'' : item.veg == 0 ? 'non_veg'.tr : 'veg'.tr,
-//                               style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).primaryColor),
+//                               style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).primaryColor),
 //                             ),
 //                           ) : const SizedBox(),
 
@@ -146,14 +146,14 @@ import 'package:get/get.dart';
 
 //                     module.itemAvailableTime! ? Row(children: [
 
-//                       Text('daily_time'.tr, style: robotoRegular.copyWith(color: Theme.of(context).disabledColor)),
+//                       Text('daily_time'.tr, style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor)),
 //                       const SizedBox(width: Dimensions.paddingSizeExtraSmall),
 
 //                       Expanded(child: Text(
 //                         '${DateConverterHelper.convertStringTimeToTime(item.availableTimeStarts!)}'
 //                             ' - ${DateConverterHelper.convertStringTimeToTime(item.availableTimeEnds!)}',
 //                         maxLines: 1,
-//                         style: robotoMedium.copyWith(color: Theme.of(context).primaryColor),
+//                         style: PoppinsMedium.copyWith(color: Theme.of(context).primaryColor),
 //                       )),
 
 //                     ]) : const SizedBox(),
@@ -162,12 +162,12 @@ import 'package:get/get.dart';
 
 //                       Icon(Icons.star, color: Theme.of(context).primaryColor, size: 20),
 
-//                       Text(item.avgRating!.toStringAsFixed(1), style: robotoRegular),
+//                       Text(item.avgRating!.toStringAsFixed(1), style: PoppinsRegular),
 //                       const SizedBox(width: Dimensions.paddingSizeSmall),
 
 //                       Expanded(child: Text(
 //                         '${item.ratingCount} ${'ratings'.tr}',
-//                         style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+//                         style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
 //                       )),
 
 //                     ]),
@@ -188,7 +188,7 @@ import 'package:get/get.dart';
 //                     Expanded(
 //                       child: Text(
 //                         'available'.tr,
-//                         style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
+//                         style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
 //                       ),
 //                     ),
 
@@ -217,7 +217,7 @@ import 'package:get/get.dart';
 //                     Expanded(
 //                       child: Text(
 //                         'recommended'.tr,
-//                         style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
+//                         style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
 //                       ),
 //                     ),
 
@@ -245,7 +245,7 @@ import 'package:get/get.dart';
 //                     Expanded(
 //                       child: Text(
 //                         'organic'.tr,
-//                         style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
+//                         style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
 //                       ),
 //                     ),
 
@@ -275,12 +275,12 @@ import 'package:get/get.dart';
 //                   margin: const EdgeInsets.only(bottom: Dimensions.paddingSizeDefault),
 //                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-//                     Text('nutrition'.tr, style: robotoMedium),
+//                     Text('nutrition'.tr, style: PoppinsMedium),
 //                     const SizedBox(height: Dimensions.paddingSizeSmall),
 
 //                     Text(
 //                       item.nutrition!.join(', '),
-//                       style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+//                       style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
 //                     ),
 
 //                     // Wrap(
@@ -292,7 +292,7 @@ import 'package:get/get.dart';
 //                     //         color: Theme.of(context).primaryColor.withOpacity(0.1),
 //                     //         borderRadius: BorderRadius.circular(cardRadius),
 //                     //       ),
-//                     //       child: Text('${item.nutrition![index]}', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+//                     //       child: Text('${item.nutrition![index]}', style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
 //                     //     );
 //                     //   }),
 //                     // ),
@@ -311,12 +311,12 @@ import 'package:get/get.dart';
 //                   margin: const EdgeInsets.only(bottom: Dimensions.paddingSizeDefault),
 //                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-//                     Text('allergic_ingredients'.tr, style: robotoMedium),
+//                     Text('allergic_ingredients'.tr, style: PoppinsMedium),
 //                     const SizedBox(height: Dimensions.paddingSizeSmall),
 
 //                     Text(
 //                       item.allergies!.join(', '),
-//                       style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+//                       style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
 //                     ),
 
 //                     // Wrap(
@@ -328,7 +328,7 @@ import 'package:get/get.dart';
 //                     //       //   color: Theme.of(context).primaryColor.withOpacity(0.1),
 //                     //       //   borderRadius: BorderRadius.circular(cardRadius),
 //                     //       // ),
-//                     //       child: Text('${item.allergies![index]} ${item.allergies!.length == index ? '' : ','}', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+//                     //       child: Text('${item.allergies![index]} ${item.allergies!.length == index ? '' : ','}', style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
 //                     //     );
 //                     //   }),
 //                     // ),
@@ -347,12 +347,12 @@ import 'package:get/get.dart';
 //                   margin: const EdgeInsets.only(bottom: Dimensions.paddingSizeDefault),
 //                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-//                     Text('generic_name'.tr, style: robotoMedium),
+//                     Text('generic_name'.tr, style: PoppinsMedium),
 //                     const SizedBox(height: Dimensions.paddingSizeSmall),
 
 //                     Text(
 //                       item.genericName!.join(', '),
-//                       style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+//                       style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
 //                     ),
 
 //                     // Wrap(
@@ -364,7 +364,7 @@ import 'package:get/get.dart';
 //                     //       //   color: Theme.of(context).primaryColor.withOpacity(0.1),
 //                     //       //   borderRadius: BorderRadius.circular(cardRadius),
 //                     //       // ),
-//                     //       child: Text('${item.genericName![index]}', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+//                     //       child: Text('${item.genericName![index]}', style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
 //                     //     );
 //                     //   }),
 //                     // ),
@@ -372,7 +372,7 @@ import 'package:get/get.dart';
 //                   ]),
 //                 ) : const SizedBox(),
 
-//                 (item.addOns!.isNotEmpty && module.addOn!) ? Text('addons'.tr, style: robotoMedium) : const SizedBox(),
+//                 (item.addOns!.isNotEmpty && module.addOn!) ? Text('addons'.tr, style: PoppinsMedium) : const SizedBox(),
 //                 SizedBox(height: (item.addOns!.isNotEmpty && module.addOn!) ? Dimensions.paddingSizeExtraSmall : 0),
 
 //                 (item.addOns!.isNotEmpty && module.addOn!) ? ListView.builder(
@@ -382,11 +382,11 @@ import 'package:get/get.dart';
 //                   itemBuilder: (context, index) {
 //                     return Row(children: [
 
-//                       Text('${item.addOns![index].name!}:', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+//                       Text('${item.addOns![index].name!}:', style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
 //                       const SizedBox(width: Dimensions.paddingSizeExtraSmall),
 //                       Text(
 //                         PriceConverterHelper.convertPrice(item.addOns![index].price),
-//                         style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
+//                         style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
 //                       ),
 
 //                     ]);
@@ -405,9 +405,9 @@ import 'package:get/get.dart';
 //                   child: Column(
 //                     crossAxisAlignment: CrossAxisAlignment.start,
 //                     children: [
-//                       Text('description'.tr, style: robotoMedium),
+//                       Text('description'.tr, style: PoppinsMedium),
 //                       const SizedBox(height: Dimensions.paddingSizeExtraSmall),
-//                       Text(item.description!, style: robotoRegular),
+//                       Text(item.description!, style: PoppinsRegular),
 //                       const SizedBox(height: Dimensions.paddingSizeLarge),
 //                     ],
 //                   ),
@@ -425,7 +425,7 @@ import 'package:get/get.dart';
 //                     children: [
 //                       Padding(
 //                         padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
-//                         child: Text('reviews'.tr, style: robotoMedium),
+//                         child: Text('reviews'.tr, style: PoppinsMedium),
 //                       ),
 //                       const SizedBox(height: Dimensions.paddingSizeSmall),
 
@@ -444,7 +444,7 @@ import 'package:get/get.dart';
 //                         ),
 //                       ) : Padding(
 //                         padding: const EdgeInsets.only(top: Dimensions.paddingSizeSmall, bottom: Dimensions.paddingSizeExtremeLarge),
-//                         child: Center(child: Text('no_review_found'.tr, style: robotoRegular.copyWith(color: Theme.of(context).disabledColor))),
+//                         child: Center(child: Text('no_review_found'.tr, style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor))),
 //                       ) : const Padding(
 //                         padding: EdgeInsets.only(top: Dimensions.paddingSizeSmall, bottom: Dimensions.paddingSizeExtremeLarge),
 //                         child: Center(child: CircularProgressIndicator()),
@@ -528,7 +528,7 @@ import 'package:get/get.dart';
 //       margin: const EdgeInsets.only(bottom: Dimensions.paddingSizeDefault),
 //       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-//         Text('variations'.tr, style: robotoMedium),
+//         Text('variations'.tr, style: PoppinsMedium),
 //         const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
 //         ListView.builder(
@@ -541,11 +541,11 @@ import 'package:get/get.dart';
 //               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
 //                 Row(children: [
-//                   Text('${item.foodVariations![index].name!} - ', style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeDefault)),
+//                   Text('${item.foodVariations![index].name!} - ', style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeDefault)),
 //                   Text(
 //                     ' ${item.foodVariations![index].type == 'multi' ? 'multiple_select'.tr : 'single_select'.tr}'
 //                       ' (${item.foodVariations![index].required == 'on' ? 'required'.tr : 'optional'.tr})',
-//                     style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+//                     style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
 //                   ),
 //                 ]),
 
@@ -560,7 +560,7 @@ import 'package:get/get.dart';
 //                     return Text(
 //                       '${item.foodVariations![index].variationValues![i].level}'
 //                           ' - ${PriceConverterHelper.convertPrice(double.parse(item.foodVariations![index].variationValues![i].optionPrice!))}',
-//                       style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall),
+//                       style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall),
 //                     );
 //                   },
 //                 ),
@@ -655,17 +655,17 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                                     children: [
                                       Text(
                                         item.name ?? 'Unknown Item', // Safe access
-                                        style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
+                                        style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
                                       ),
                                       module != null && module.stock != null
                                           ? Row(children: [
-                                              Text('${'total_stock'.tr}:', style: robotoRegular),
+                                              Text('${'total_stock'.tr}:', style: PoppinsRegular),
                                               const SizedBox(width: Dimensions.paddingSizeExtraSmall),
                                               Text(
                                                 item.stock?.toString() ?? '0', // Safe access
-                                                style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
+                                                style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
                                               ),
                                             ])
                                           : const SizedBox(),
@@ -673,7 +673,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                                         '${'price'.tr}: ${item.price ?? '0'}', // Safe access
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
-                                        style: robotoRegular,
+                                        style: PoppinsRegular,
                                       ),
                                       Row(children: [
                                         Expanded(
@@ -681,7 +681,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                                             '${'discount'.tr}: ${item.discount ?? '0'} ${item.discountType == 'percent' ? '%' : Get.find<SplashController>().configModel?.currencySymbol ?? ''}',
                                             maxLines: 1,
                                             overflow: TextOverflow.ellipsis,
-                                            style: robotoRegular,
+                                            style: PoppinsRegular,
                                           ),
                                         ),
                                         (module?.unit == true || Get.find<SplashController>().configModel?.toggleVegNonVeg == true)
@@ -693,7 +693,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                                                 ),
                                                 child: Text(
                                                   module?.unit == true ? item.unitType ?? '' : item.veg == 0 ? 'non_veg'.tr : 'veg'.tr,
-                                                  style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).primaryColor),
+                                                  style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).primaryColor),
                                                 ),
                                               )
                                             : const SizedBox(),
@@ -705,25 +705,25 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                               const SizedBox(height: Dimensions.paddingSizeSmall),
                               module?.itemAvailableTime == true
                                   ? Row(children: [
-                                      Text('daily_time'.tr, style: robotoRegular.copyWith(color: Theme.of(context).disabledColor)),
+                                      Text('daily_time'.tr, style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor)),
                                       const SizedBox(width: Dimensions.paddingSizeExtraSmall),
                                       Expanded(
                                         child: Text(
                                           '${DateConverterHelper.convertStringTimeToTime(item.availableTimeStarts ?? '')} - ${DateConverterHelper.convertStringTimeToTime(item.availableTimeEnds ?? '')}',
                                           maxLines: 1,
-                                          style: robotoMedium.copyWith(color: Theme.of(context).primaryColor),
+                                          style: PoppinsMedium.copyWith(color: Theme.of(context).primaryColor),
                                         ),
                                       ),
                                     ])
                                   : const SizedBox(),
                               Row(children: [
                                 Icon(Icons.star, color: Theme.of(context).primaryColor, size: 20),
-                                Text(item.avgRating?.toStringAsFixed(1) ?? '0.0', style: robotoRegular),
+                                Text(item.avgRating?.toStringAsFixed(1) ?? '0.0', style: PoppinsRegular),
                                 const SizedBox(width: Dimensions.paddingSizeSmall),
                                 Expanded(
                                   child: Text(
                                     '${item.ratingCount ?? 0} ${'ratings'.tr}',
-                                    style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                                    style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                                   ),
                                 ),
                               ]),
@@ -741,7 +741,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                               Expanded(
                                 child: Text(
                                   'available'.tr,
-                                  style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
+                                  style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
                                 ),
                               ),
                               FlutterSwitch(
@@ -769,7 +769,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                               Expanded(
                                 child: Text(
                                   'recommended'.tr,
-                                  style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
+                                  style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
                                 ),
                               ),
                               FlutterSwitch(
@@ -798,7 +798,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                                     Expanded(
                                       child: Text(
                                         'organic'.tr,
-                                        style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
+                                        style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
                                       ),
                                     ),
                                     FlutterSwitch(
@@ -829,11 +829,11 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                             padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
                             margin: const EdgeInsets.only(bottom: Dimensions.paddingSizeDefault),
                             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                              Text('nutrition'.tr, style: robotoMedium),
+                              Text('nutrition'.tr, style: PoppinsMedium),
                               const SizedBox(height: Dimensions.paddingSizeSmall),
                               Text(
                                 item.nutrition!.join(', '),
-                                style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+                                style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
                               ),
                             ]),
                           ) : const SizedBox(),
@@ -847,11 +847,11 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                             padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
                             margin: const EdgeInsets.only(bottom: Dimensions.paddingSizeDefault),
                             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                              Text('allergic_ingredients'.tr, style: robotoMedium),
+                              Text('allergic_ingredients'.tr, style: PoppinsMedium),
                               const SizedBox(height: Dimensions.paddingSizeSmall),
                               Text(
                                 item.allergies!.join(', '),
-                                style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+                                style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
                               ),
                             ]),
                           ) : const SizedBox(),
@@ -865,15 +865,15 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                             padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
                             margin: const EdgeInsets.only(bottom: Dimensions.paddingSizeDefault),
                             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                              Text('generic_name'.tr, style: robotoMedium),
+                              Text('generic_name'.tr, style: PoppinsMedium),
                               const SizedBox(height: Dimensions.paddingSizeSmall),
                               Text(
                                 item.genericName!.join(', '),
-                                style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+                                style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
                               ),
                             ]),
                           ) : const SizedBox(),
-                          (item.addOns?.isNotEmpty == true && module?.addOn == true) ? Text('addons'.tr, style: robotoMedium) : const SizedBox(),
+                          (item.addOns?.isNotEmpty == true && module?.addOn == true) ? Text('addons'.tr, style: PoppinsMedium) : const SizedBox(),
                           SizedBox(height: (item.addOns?.isNotEmpty == true && module?.addOn == true) ? Dimensions.paddingSizeExtraSmall : 0),
                           (item.addOns?.isNotEmpty == true && module?.addOn == true) ? ListView.builder(
                             itemCount: item.addOns!.length,
@@ -881,11 +881,11 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                             shrinkWrap: true,
                             itemBuilder: (context, index) {
                               return Row(children: [
-                                Text('${item.addOns![index].name!}:', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
+                                Text('${item.addOns![index].name!}:', style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)),
                                 const SizedBox(width: Dimensions.paddingSizeExtraSmall),
                                 Text(
                                   PriceConverterHelper.convertPrice(item.addOns![index].price),
-                                  style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
+                                  style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
                                 ),
                               ]);
                             },
@@ -902,9 +902,9 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('description'.tr, style: robotoMedium),
+                                Text('description'.tr, style: PoppinsMedium),
                                 const SizedBox(height: Dimensions.paddingSizeExtraSmall),
-                                Text(item.description ?? 'No description available', style: robotoRegular),
+                                Text(item.description ?? 'No description available', style: PoppinsRegular),
                                 const SizedBox(height: Dimensions.paddingSizeLarge),
                               ],
                             ),
@@ -922,7 +922,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
-                                  child: Text('reviews'.tr, style: robotoMedium),
+                                  child: Text('reviews'.tr, style: PoppinsMedium),
                                 ),
                                 const SizedBox(height: Dimensions.paddingSizeSmall),
                                 storeController.itemReviewList != null
@@ -944,7 +944,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                                           )
                                         : Padding(
                                             padding: const EdgeInsets.only(top: Dimensions.paddingSizeSmall, bottom: Dimensions.paddingSizeExtremeLarge),
-                                            child: Center(child: Text('no_review_found'.tr, style: robotoRegular.copyWith(color: Theme.of(context).disabledColor))),
+                                            child: Center(child: Text('no_review_found'.tr, style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor))),
                                           )
                                     : const Padding(
                                         padding: EdgeInsets.only(top: Dimensions.paddingSizeSmall, bottom: Dimensions.paddingSizeExtremeLarge),
@@ -1029,7 +1029,7 @@ class FoodVariationView extends StatelessWidget {
       padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
       margin: const EdgeInsets.only(bottom: Dimensions.paddingSizeDefault),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text('variations'.tr, style: robotoMedium),
+        Text('variations'.tr, style: PoppinsMedium),
         const SizedBox(height: Dimensions.paddingSizeExtraSmall),
         ListView.builder(
           itemCount: item.foodVariations!.length,
@@ -1040,11 +1040,11 @@ class FoodVariationView extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeExtraSmall),
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Row(children: [
-                  Text('${item.foodVariations![index].name! } - ', style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeDefault)),
+                  Text('${item.foodVariations![index].name! } - ', style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeDefault)),
                   Text(
                     ' ${item.foodVariations![index].type == 'multi' ? 'multiple_select'.tr : 'single_select'.tr}'
                     ' (${item.foodVariations![index].required == 'on' ? 'required'.tr : 'optional'.tr})',
-                    style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                    style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                   ),
                 ]),
                 const SizedBox(height: Dimensions.paddingSizeExtraSmall),
@@ -1057,7 +1057,7 @@ class FoodVariationView extends StatelessWidget {
                     return Text(
                       '${item.foodVariations![index].variationValues![i].level}'
                       ' - ${PriceConverterHelper.convertPrice(double.parse(item.foodVariations![index].variationValues![i].optionPrice!))}',
-                      style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall),
+                      style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeExtraSmall),
                     );
                   },
                 ),

@@ -52,7 +52,7 @@ class _AddBannerScreenState extends State<AddBannerScreen> {
                 padding: const EdgeInsets.all(Dimensions.paddingSizeDefault),
                 child: SingleChildScrollView(
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Text('title'.tr, style: robotoRegular),
+                    Text('title'.tr, style: PoppinsRegular),
                     const SizedBox(height: Dimensions.paddingSizeSmall),
 
                     CustomTextFieldWidget(
@@ -62,7 +62,7 @@ class _AddBannerScreenState extends State<AddBannerScreen> {
                     ),
                     const SizedBox(height: Dimensions.paddingSizeDefault),
 
-                    Text('redirection_url_link'.tr, style: robotoRegular),
+                    Text('redirection_url_link'.tr, style: PoppinsRegular),
                     const SizedBox(height: Dimensions.paddingSizeSmall),
 
                     CustomTextFieldWidget(
@@ -72,7 +72,7 @@ class _AddBannerScreenState extends State<AddBannerScreen> {
                     ),
                     const SizedBox(height: Dimensions.paddingSizeDefault),
 
-                    Text('upload_banner'.tr, style: robotoRegular),
+                    Text('upload_banner'.tr, style: PoppinsRegular),
                     const SizedBox(height: Dimensions.paddingSizeSmall),
 
 
@@ -109,7 +109,7 @@ class _AddBannerScreenState extends State<AddBannerScreen> {
 
                                   Text(
                                     "drag_drop_file_or_browse_file".tr,
-                                    style: robotoRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall),
+                                    style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall),
                                   ),
                                 ]),
                               ),
@@ -125,7 +125,7 @@ class _AddBannerScreenState extends State<AddBannerScreen> {
                       alignment: Alignment.center,
                       child: Text(
                           "banner_images_ration_5:1".tr,
-                          style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
+                          style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall),
                       ),
                     ),
                     const SizedBox(height: Dimensions.paddingSizeExtraSmall),
@@ -134,7 +134,7 @@ class _AddBannerScreenState extends State<AddBannerScreen> {
                       alignment: Alignment.center,
                       child: Text(
                           "image_format_maximum_size_2mb".tr,
-                          style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor.withOpacity(0.5)),
+                          style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor.withOpacity(0.5)),
                       ),
                     ),
 

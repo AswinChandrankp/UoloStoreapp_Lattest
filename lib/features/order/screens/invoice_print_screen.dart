@@ -122,7 +122,7 @@ class _InVoicePrintScreenState extends State<InVoicePrintScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(children: [
-                Text('paired_bluetooth'.tr, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
+                Text('paired_bluetooth'.tr, style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge)),
                 const SizedBox(width: Dimensions.paddingSizeSmall),
 
                 SizedBox(height: 20, width: 20,
@@ -182,7 +182,7 @@ class _InVoicePrintScreenState extends State<InVoicePrintScreen> {
                             title: Text(availableBluetoothDevices?[index].name ?? ''),
                             subtitle: Text(
                               isConnected ? 'connected'.tr : "click_to_connect".tr,
-                              style: robotoRegular.copyWith(color: isConnected ? null : Theme.of(context).primaryColor),
+                              style: PoppinsRegular.copyWith(color: isConnected ? null : Theme.of(context).primaryColor),
                             ),
                           ),
 
@@ -204,7 +204,7 @@ class _InVoicePrintScreenState extends State<InVoicePrintScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeSmall),
                 child: Text(
                   _warningMessage?? '',
-                  style: robotoRegular.copyWith(color: Colors.redAccent),
+                  style: PoppinsRegular.copyWith(color: Colors.redAccent),
                 ),
               ),
 
@@ -244,7 +244,7 @@ class _InVoicePrintScreenState extends State<InVoicePrintScreen> {
     //     mainAxisSize: MainAxisSize.min,
     //     children: [
     //
-    //       Text('paper_size'.tr, style: robotoMedium),
+    //       Text('paper_size'.tr, style: PoppinsMedium),
     //       Row(children: [
     //         Expanded(child: RadioListTile(
     //           title: Text('80_mm'.tr),

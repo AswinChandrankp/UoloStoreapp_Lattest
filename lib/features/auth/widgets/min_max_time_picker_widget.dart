@@ -48,7 +48,7 @@ class _MinMaxTimePickerWidgetState extends State<MinMaxTimePickerWidget> {
             ),
             child: Center(child: Text(
               widget.times[index].toString(),
-              style: selectedIndex == index ? robotoBold.copyWith(fontSize: Dimensions.fontSizeExtraLarge) : robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+              style: selectedIndex == index ? PoppinsBold.copyWith(fontSize: Dimensions.fontSizeExtraLarge) : PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
             )),
           );
         },

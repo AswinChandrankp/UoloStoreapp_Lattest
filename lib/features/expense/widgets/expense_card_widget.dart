@@ -22,7 +22,7 @@ class ExpenseCardWidget extends StatelessWidget {
       margin: const EdgeInsets.all(Dimensions.paddingSizeSmall),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
 
-        Text('${'order_id'.tr}: #${expense.orderId}', style: robotoMedium),
+        Text('${'order_id'.tr}: #${expense.orderId}', style: PoppinsMedium),
         const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
         const Divider(),
@@ -30,18 +30,18 @@ class ExpenseCardWidget extends StatelessWidget {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Text(
             DateConverterHelper.dateTimeStringToDateTime(expense.createdAt!),
-            style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+            style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
           ),
-          Text('amount'.tr, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor)),
+          Text('amount'.tr, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor)),
         ]),
         const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Row(children: [
-            Text('${'expense_type'.tr} - ', style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall)),
-            Text(expense.type!.tr, style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall, color: Colors.blue)),
+            Text('${'expense_type'.tr} - ', style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall)),
+            Text(expense.type!.tr, style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall, color: Colors.blue)),
           ]),
-          Text(PriceConverterHelper.convertPrice(expense.amount), style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge,)),
+          Text(PriceConverterHelper.convertPrice(expense.amount), style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeLarge,)),
         ]),
       ]),
     );

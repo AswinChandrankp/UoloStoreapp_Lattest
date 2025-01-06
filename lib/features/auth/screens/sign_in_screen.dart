@@ -76,7 +76,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   Image.asset(Images.logo, width: 200),
                   const SizedBox(height: Dimensions.paddingSizeExtraLarge),
 
-                  Text('sign_in'.tr.toUpperCase(), style: robotoBold.copyWith(fontSize: Dimensions.fontSizeOverLarge)),
+                  Text('sign_in'.tr.toUpperCase(), style: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeOverLarge)),
                   const SizedBox(height: Dimensions.paddingSizeExtraSmall),
 
                   const SizedBox(height: 50),
@@ -94,7 +94,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             Expanded(
                               child: Center(child: Text(
                                 'store_owner'.tr,
-                                style: robotoMedium.copyWith(color: authController.vendorTypeIndex == 0
+                                style: PoppinsMedium.copyWith(color: authController.vendorTypeIndex == 0
                                     ? Theme.of(context).textTheme.bodyLarge!.color : Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.3)),
                               )),
                             ),
@@ -116,7 +116,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             Expanded(
                               child: Center(child: Text(
                                 'store_employee'.tr,
-                                style: robotoMedium.copyWith(color: authController.vendorTypeIndex == 1
+                                style: PoppinsMedium.copyWith(color: authController.vendorTypeIndex == 1
                                     ? Theme.of(context).textTheme.bodyLarge!.color : Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.3)),
                               )),
                             ),
@@ -208,10 +208,10 @@ class _SignInScreenState extends State<SignInScreen> {
                       Get.toNamed(RouteHelper.getRestaurantRegistrationRoute());
                     },
                     child: RichText(text: TextSpan(children: [
-                      TextSpan(text: '${'join_as'.tr} ', style: robotoRegular.copyWith(color: Theme.of(context).disabledColor)),
+                      TextSpan(text: '${'join_as'.tr} ', style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor)),
                       TextSpan(
                         text: 'store'.tr,
-                        style: robotoMedium.copyWith(color: Theme.of(context).textTheme.bodyLarge!.color),
+                        style: PoppinsMedium.copyWith(color: Theme.of(context).textTheme.bodyLarge!.color),
                       ),
                     ])),
                   ) : const SizedBox(),

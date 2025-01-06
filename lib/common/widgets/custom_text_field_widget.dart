@@ -93,7 +93,7 @@ class CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        widget.showTitle ? Text(widget.hintText, style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall)) : const SizedBox(),
+        widget.showTitle ? Text(widget.hintText, style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall)) : const SizedBox(),
         SizedBox(height: widget.showTitle ? Dimensions.paddingSizeExtraSmall : 0),
 
         TextFormField(
@@ -101,7 +101,7 @@ class CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
           controller: widget.controller,
           focusNode: widget.focusNode,
           validator: widget.validator,
-          style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeLarge),
+          style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeLarge),
           textInputAction: widget.inputAction,
           keyboardType: widget.isAmount ? const TextInputType.numberWithOptions(decimal: true) : widget.isNumber ? TextInputType.number : widget.inputType,
           cursorColor: Theme.of(context).primaryColor,
@@ -142,20 +142,20 @@ class CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
             isDense: true,
             hintText: widget.hintText,
             fillColor: Theme.of(context).cardColor,
-            hintStyle: robotoRegular.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).hintColor),
+            hintStyle: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).hintColor),
             filled: true,
-            labelStyle : widget.showLabelText ? robotoRegular.copyWith(fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).hintColor) : null,
-            errorStyle: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+            labelStyle : widget.showLabelText ? PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).hintColor) : null,
+            errorStyle: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
 
             label: widget.showLabelText ? Text.rich(TextSpan(children: [
 
-              TextSpan(text: widget.labelText ?? '', style: robotoRegular.copyWith(fontSize: widget.labelTextSize ?? Dimensions.fontSizeLarge, color: Theme.of(context).hintColor.withOpacity(.75))),
+              TextSpan(text: widget.labelText ?? '', style: PoppinsRegular.copyWith(fontSize: widget.labelTextSize ?? Dimensions.fontSizeLarge, color: Theme.of(context).hintColor.withOpacity(.75))),
 
               if(widget.required && widget.labelText != null)
-                TextSpan(text : ' *', style: robotoRegular.copyWith(color: Theme.of(context).colorScheme.error, fontSize: Dimensions.fontSizeLarge)),
+                TextSpan(text : ' *', style: PoppinsRegular.copyWith(color: Theme.of(context).colorScheme.error, fontSize: Dimensions.fontSizeLarge)),
 
               // if(widget.isEnabled == false)
-              //   TextSpan(text: widget.fromUpdateProfile ? ' (${'phone_number_can_not_be_edited'.tr})' : ' (${'non_changeable'.tr})', style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).colorScheme.error)),
+              //   TextSpan(text: widget.fromUpdateProfile ? ' (${'phone_number_can_not_be_edited'.tr})' : ' (${'non_changeable'.tr})', style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeLarge, color: Theme.of(context).colorScheme.error)),
 
             ])) : null,
 
@@ -179,7 +179,7 @@ class CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
                       backgroundColor: Theme.of(context).cardColor,
                       dialogBackgroundColor: Theme.of(context).cardColor,
                       favorite: [widget.countryDialCode!],
-                      textStyle: robotoRegular.copyWith(
+                      textStyle: PoppinsRegular.copyWith(
                         fontSize: Dimensions.fontSizeDefault, color: Theme.of(context).textTheme.bodyMedium!.color,
                       ),
                     ),

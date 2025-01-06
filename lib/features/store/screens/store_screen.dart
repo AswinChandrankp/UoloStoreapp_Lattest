@@ -79,7 +79,7 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
         elevation: 0,
         title: Padding(
       padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
-          child: Text("Uolo", style: robotoRegular.copyWith(color:  Theme.of(context).primaryColor, fontSize: 30,fontWeight: FontWeight.w900)),
+          child: Text("Uolo", style: PoppinsRegular.copyWith(color:  Theme.of(context).primaryColor, fontSize: 30,fontWeight: FontWeight.w900)),
         ),
         actions: [IconButton(
           icon: GetBuilder<NotificationController>(builder: (notificationController) {
@@ -199,25 +199,25 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
 
                     Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                       Text(
-                        store.name ?? '', style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
+                        store.name ?? '', style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeLarge),
                         maxLines: 1, overflow: TextOverflow.ellipsis,
                       ),
 
                       Text(
                         store.address ?? '', maxLines: 1, overflow: TextOverflow.ellipsis,
-                        style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
+                        style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
                       ),
 
                       Row(children: [
                         Icon(Icons.star_rounded, color: Theme.of(context).hintColor, size: 18),
                         Text(
                           store.avgRating!.toStringAsFixed(1),
-                          style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
+                          style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall),
                         ),
                         const SizedBox(width: Dimensions.paddingSizeSmall),
                         Text(
                           '${store.ratingCount ?? 0} ${'ratings'.tr}',
-                          style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).disabledColor),
+                          style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeExtraSmall, color: Theme.of(context).disabledColor),
                         ),
                       ]),
 
@@ -248,7 +248,7 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
                       '${store.discount!.discount}% ${'off'.tr} ${'enjoy'.tr} ${store.discount!.discount}% ${Get.find<SplashController>().configModel!.moduleConfig!.module!.showRestaurantText! ? 'off_on_all_foods'.tr : 'off_on_all_items'.tr} '
                       '${store.discount!.minPurchase != 0 ? '[ ${'minimum_purchase'.tr}: ${PriceConverterHelper.convertPrice(store.discount!.minPurchase)} ]' : ''} '
                       '${store.discount!.maxDiscount != 0 ? '[ ${'maximum_discount'.tr}: ${PriceConverterHelper.convertPrice(store.discount!.maxDiscount)} ]' : ''}',
-                      style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeSmall, color: Colors.white),
+                      style: PoppinsMedium.copyWith(fontSize: Dimensions.fontSizeSmall, color: Colors.white),
                       textAlign: TextAlign.center, maxLines: 2, overflow: TextOverflow.ellipsis,
                     ),
                   ) : const SizedBox(),
@@ -256,7 +256,7 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
 
                   (store.delivery! && store.freeDelivery!) ? Text(
                     'free_delivery'.tr,
-                    style: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor),
+                    style: PoppinsRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor),
                   ) : const SizedBox(),
 
                 ]),
@@ -275,8 +275,8 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
                     indicatorSize: TabBarIndicatorSize.tab,
                     labelColor: Theme.of(context).textTheme.bodyLarge!.color,
                     unselectedLabelColor: Theme.of(context).disabledColor,
-                    unselectedLabelStyle: robotoBold.copyWith(color: Theme.of(context).disabledColor),
-                    labelStyle: robotoBold.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor),
+                    unselectedLabelStyle: PoppinsBold.copyWith(color: Theme.of(context).disabledColor),
+                    labelStyle: PoppinsBold.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor),
                     tabs: _review! ? [
                       Tab(text: 'all_items'.tr),
                       Tab(text: 'reviews'.tr),
@@ -296,7 +296,7 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
                       Get.find<StoreController>().getItemList('1', type);
                     }) : Center(child: Padding(
                       padding: const EdgeInsets.only(top: 100),
-                      child: Text('you_have_no_permission_to_access_this_feature'.tr, style: robotoMedium),
+                      child: Text('you_have_no_permission_to_access_this_feature'.tr, style: PoppinsMedium),
                     ));
                   } else {
                     return haveSubscription ? Get.find<ProfileController>().modulePermission!.reviews! ? storeController.storeReviewList != null ? storeController.storeReviewList!.isNotEmpty ? ListView.builder(
@@ -312,16 +312,16 @@ class _StoreScreenState extends State<StoreScreen> with TickerProviderStateMixin
                       },
                     ) : Padding(
                       padding: const EdgeInsets.only(top: 200),
-                      child: Center(child: Text('no_review_found'.tr, style: robotoRegular.copyWith(color: Theme.of(context).disabledColor))),
+                      child: Center(child: Text('no_review_found'.tr, style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor))),
                     ) : const Padding(
                       padding: EdgeInsets.only(top: Dimensions.paddingSizeLarge),
                       child: Center(child: CircularProgressIndicator()),
                     ) : Center(child: Padding(
                       padding: const EdgeInsets.only(top: 100),
-                      child: Text('you_have_no_permission_to_access_this_feature'.tr, style: robotoMedium),
+                      child: Text('you_have_no_permission_to_access_this_feature'.tr, style: PoppinsMedium),
                     )) : Padding(
                       padding: const EdgeInsets.only(top: 50),
-                      child: Center(child: Text('you_have_no_available_subscription'.tr, style: robotoRegular.copyWith(color: Theme.of(context).disabledColor))),
+                      child: Center(child: Text('you_have_no_available_subscription'.tr, style: PoppinsRegular.copyWith(color: Theme.of(context).disabledColor))),
                     );
                   }
                 },
